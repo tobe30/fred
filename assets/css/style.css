@@ -719,7 +719,7 @@ h6 {
   font-weight: 600;
   color: #fff;
   transition: 0.3;
-  background: #141414;
+  background: #424242;
   padding: 10px 15px;
   border-radius: 4px;
 }
@@ -802,16 +802,17 @@ h6 {
 }
 
 .dashboard .filter .icon {
-  color: #aab7cf;
+  color: #000;
   padding-right: 20px;
   padding-bottom: 5px;
   transition: 0.3s;
   font-size: 16px;
+  font-size: 30px;
 }
 
 .dashboard .filter .icon:hover,
 .dashboard .filter .icon:focus {
-  color: #4154f1;
+  color: #000;
 }
 
 .dashboard .filter .dropdown-header {

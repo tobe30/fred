@@ -15,22 +15,29 @@
 .dataTable-top > div:first-child,
 .dataTable-bottom > nav:first-child,
 .dataTable-bottom > div:first-child {
-	float: left;
+	float: right;
 }
 
 .dataTable-top > nav:last-child,
 .dataTable-top > div:last-child,
 .dataTable-bottom > nav:last-child,
 .dataTable-bottom > div:last-child {
-	float: right;
+	float: left;
 }
 
 .dataTable-selector {
 	padding: 6px;
+	border: 1px solid #000;
+	border-radius: 5px;
+
+
 }
 
 .dataTable-input {
 	padding: 6px 12px;
+	width: 300px;
+	border: 1px solid #ccc;
+	border-radius: 10px;
 }
 
 .dataTable-info {
