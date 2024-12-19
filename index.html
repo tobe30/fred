@@ -10,7 +10,7 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="assets/img/Frame 2466.png" rel="icon">
+  <link href="assets/img/Group 1.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
@@ -140,14 +140,14 @@
       </li><!-- End Profile Page Nav -->
  
       <li class="nav-item">
-        <a class="nav-link collapsed" href="users-profile.html">
+        <a class="nav-link collapsed" href="">
           <i class="bi bi-people-fill"></i>
           <span>Students</span>
         </a>
       </li><!-- End Profile Page Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="users-profile.html">
+        <a class="nav-link collapsed" href="announcement.html">
           <i class="bi bi-chat-square-dots-fill"></i>
           <span>Announcement</span>
         </a>
@@ -156,7 +156,7 @@
       <hr>
      
       <li class="nav-item">
-        <a class="nav-link collapsed" href="users-profile.html">
+        <a class="nav-link collapsed" href="student1.html">
           <i class="bi bi-gear-fill"></i>
           <span>Settings</span>
         </a>
@@ -369,14 +369,12 @@
                         backgroundColor: [
                           'rgb(255, 99, 132)',
                           'rgb(54, 162, 235)',
-                          'rgb(255, 205, 86)'
                         ],
                         hoverOffset: 4
                       }],
                       labels: [
-                      'Student',
-                      'course rep',
-                      'Yellow'
+                      'Attended',
+                      'Missed',
                     ],
                     }
                   });
@@ -397,7 +395,7 @@
           <div class="card top-selling overflow-auto">
 
             <div class="filter">
-              <h5 class="icon" href="#" data-bs-toggle="dropdown">See all</h5>
+              <p class="" ><a  href="recent-attendance.html">See all</a> </p>
              <!-- <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
                 <li class="dropdown-header text-start">
                   <h6>Filter</h6>
@@ -418,8 +416,8 @@
                     <th scope="col">Course</th>
                     <th scope="col">Class</th>
                     <th scope="col">Department</th>
-                    <th scope="col">Attendees</th>
-                    <th scope="col">Time</th>
+                    <th scope="col">Assigned Lecturer</th>
+                    <th scope="col">Status</th>
                     <th></th>
                   </tr>
                 </thead>
@@ -427,66 +425,71 @@
                   <tr>
                     <td class="py-3">
                       <div class="d-flex align-items-center">
-                        <input class="form-check-input me-2" type="checkbox" value="" id="flexCheckDefault" />
                         <span>CSC 441: Artificial Intelligence</span>
                       </div>
                     </td>
                     <td class="py-3">Introduction AI</td>
                     <td class="py-3">Computer Science/Informatics</td>
-                    <td class="py-3 fw-bold">70</td>
-                    <td class="py-3">5 mins ago</td>
+                    <td class="py-3">Mr Onwudebelu</td>
+                    <td>
+                      <span class="badge" style="background-color: #25D366; color: white;">Live</span>
+                    </td>
                     <td class="py-3"><i class="bi bi-three-dots"></i></td>
                   </tr>
                   <tr>
                     <td class="py-3">
                       <div class="d-flex align-items-center">
-                        <input class="form-check-input me-2" type="checkbox" value="" id="flexCheckDefault2" />
                         <span>CSC 442: Machine Learning</span>
                       </div>
                     </td>
                     <td class="py-3">Intermediate ML</td>
                     <td class="py-3">Computer Science/Informatics</td>
-                    <td class="py-3 fw-bold">50</td>
-                    <td class="py-3">10 mins ago</td>
+                    <td class="py-3 ">Mr Onwudebelu</td>
+                    <td class="py-3">
+                      <span class="badge" style="background-color: #DCBD10; color: white;">Ended</span>
+                    </td>
                     <td class="py-3"><i class="bi bi-three-dots"></i></td>
                   </tr>
                   <tr>
                     <td class="py-3">
                       <div class="d-flex align-items-center">
-                        <input class="form-check-input me-2" type="checkbox" value="" id="flexCheckDefault2" />
                         <span>CSC 442: Machine Learning</span>
                       </div>
                     </td>
                     <td class="py-3">Intermediate ML</td>
                     <td class="py-3">Computer Science/Informatics</td>
-                    <td class="py-3 fw-bold">50</td>
-                    <td class="py-3">10 mins ago</td>
+                    <td class="py-3">Mr Onwudebelu</td>
+                    <td class="py-3">
+                      <span class="badge" style="background-color: #25D366; color: white;">Live</span>
+                    </td>
                     <td class="py-3"><i class="bi bi-three-dots"></i></td>
                   </tr>
                   <tr>
                     <td class="py-3">
                       <div class="d-flex align-items-center">
-                        <input class="form-check-input me-2" type="checkbox" value="" id="flexCheckDefault2" />
                         <span>CSC 442: Machine Learning</span>
                       </div>
                     </td>
                     <td class="py-3">Intermediate ML</td>
                     <td class="py-3">Computer Science/Informatics</td>
-                    <td class="py-3 fw-bold">50</td>
-                    <td class="py-3">10 mins ago</td>
+                    <td class="py-3 ">Mr Onwudebelu</td>
+                    <td class="py-3">
+                      <span class="badge" style="background-color: #25D366; color: white;">Live</span>
+                    </td>
                     <td class="py-3"><i class="bi bi-three-dots"></i></td>
                   </tr>
                   <tr>
                     <td class="py-3">
                       <div class="d-flex align-items-center">
-                        <input class="form-check-input me-2" type="checkbox" value="" id="flexCheckDefault2" />
                         <span>CSC 442: Machine Learning</span>
                       </div>
                     </td>
                     <td class="py-3">Intermediate ML</td>
                     <td class="py-3">Computer Science/Informatics</td>
-                    <td class="py-3 fw-bold">50</td>
-                    <td class="py-3">10 mins ago</td>
+                    <td class="py-3 ">Mr Onwudebelu</td>
+                    <td class="py-3">
+                      <span class="badge" style="background-color: #DCBD10; color: white;">Ended</span>
+                    </td>
                     <td class="py-3"><i class="bi bi-three-dots"></i></td>
                   </tr>
                 </tbody>
