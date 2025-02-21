@@ -76,60 +76,192 @@
         max-width: 100%;
       }
 
-      .table-container { max-width: 100%; overflow-x: auto; }
-      .search-input { width: 250px; } /* Adjust search width */
       .table-container {
-          background: #fff;
-          padding: 20px;
-          border-radius: 10px;
-          box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-      }
+        background: #fff;
+        padding: 20px;
+        border-radius: 12px;
+    }
+    .table {
+        color: white;
+    }
+    .table thead {
+        background: #fff;
+        color: #000;
+    }
+    .table tbody tr {
+        background: #fff;
+        color: #000;
+    }
+    .table tbody td{
+      color: #737373;
+    }
+    .table tbody tr:hover {
+        background: #f1f1f1;
+    }
+    .profile-img {
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      object-fit: cover;
+  }
 
-      .pagination .page-item.active .page-link {
-         background-color: transparent;
-          border-color: #28a745;
-          border: none;
-          color: gray;
-      }
-      .pagination .page-item .page-link {
-          color: #000;
-      }
-      #lecturerTable td {
-          padding: 15px 10px; /* Adjust as needed */
-          color: #737373;
-      }
-      .iconic {
+  .text-container {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.2; /* Reduces space between name & email */
+  }
+
+  .gap-2 {
+      gap: 5px !important; /* Reduces space between image & text */
+  }
+    .progress {
+        height: 6px;
+        border-radius: 5px;
+        background: #fff;
+    }
+    .progress-bar {
         background-color: #24AA4E;
-        text-decoration: none;
-        color: #fff;
-        padding: 8px 10px;
-        border-radius: 10px;
-        font-size: 20px; /* Controls button text size */
-        border: none;
-        display: flex;
-        align-items: center;
+        border-radius: 5px;
     }
-  
-    .bigger-icon {
-        font-size: 25px; /* Adjust icon size */
-    }
-      .search-bar {
-        display: flex;
-        align-items: center;
+    .togo {
+        background: #fff;
+        color: #000;
         border: 1px solid #ccc;
-        border-radius: 20px;
-        padding: 5px 10px;
-        background-color: white;
+        padding: 8px 14px;
+        border-radius: 8px;
     }
-    .search-bar input {
+    .togo:hover {
+        background: #fff;
+    }
+    .btn-download {
+        background: #24AA4E;
+        color: #fff;
         border: none;
-        outline: none;
-        flex-grow: 1;
-        padding: 5px;
+        padding: 10px 16px;
+        border-radius: 8px;
     }
-    .search-bar i {
-        color: gray;
+    .btn-dept {
+      background: none;
+      color: #000;
+      border: 1px solid #ccc;
+      padding: 8px 12px;
+      border-radius: 8px;
+      font-size: 14px; /* Slightly increased for better balance */
+      display: flex;
+      align-items: center;
+      gap: 5px; /* Adds spacing between icon and text */
+  }
+
+  .v-icon {
+      font-size: 20px; /* Adjusted for better alignment */
+  }
+    .btn-download:hover {
+        background: #1E8A3E;
     }
+    .pagination .page-link {
+        background: #2A2A2A;
+        color: white;
+        border: none;
+        margin: 0 5px;
+        border-radius: 8px;
+    }
+    .pagination .page-item.active .page-link {
+        background: #24AA4E;
+        color: white;
+    }
+    .pagination .page-link:hover {
+        background: #373737;
+    }
+    .checkbox {
+        width: 18px;
+        height: 18px;
+    }
+    .actions {
+        font-size: 1.2rem;
+        cursor: pointer;
+    }
+
+    .upload-box {
+      width: 100%;
+      height: 80px; /* Adjust height as needed */
+      background: #f5f5f5;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      position: relative;
+      border: none;
+  }
+
+  .upload-content {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+  }
+
+  .file-input {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      cursor: pointer;
+  }
+
+  .bi-camera {
+      font-size: 20px;
+  }
+
+  .custom-modal {
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
+  }
+
+  /* Red Header */
+  .custom-header {
+    background-color: #d32f2f;
+    color: white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding: 15px;
+    font-weight: bold;
+  }
+
+  /* Confirmation Text */
+  .confirm-text {
+    font-size: 18px;
+    font-weight: 500;
+    color: #333;
+  }
+
+  /* Remove Button */
+  .custom-remove-btn {
+    background-color: #d32f2f;
+    color: white;
+    border: none;
+    padding: 10px 24px;
+    font-size: 16px;
+    border-radius: 8px;
+  }
+
+  .custom-remove-btn:hover {
+    background-color: #b71c1c;
+  }
+
+  /* Cancel Button */
+  .custom-cancel-btn {
+    background-color: #f5f5f5;
+    color: black;
+    border: none;
+    padding: 10px 24px;
+    font-size: 16px;
+    border-radius: 8px;
+  }
+
+  .custom-cancel-btn:hover {
+    background-color: #e0e0e0;
+  }
     </style>
 
     <!-- Template Main CSS File -->
@@ -344,7 +476,7 @@
         <!-- End Attendance Page Nav -->
 
         <li class="nav-item">
-          <a class="nav-link " href="lecturers.html">
+          <a class="nav-link collapsed" href="lecturers.html">
             <i class="bi bi-mortarboard-fill"></i>
             <span>Lecturers</span>
           </a>
@@ -352,7 +484,7 @@
         <!-- End Lecturers Page Nav -->
 
         <li class="nav-item">
-          <a class="nav-link collapsed" href="department.html">
+          <a class="nav-link " href="department.html">
             <i class="ri ri-book-2-line"></i>
             <span>Department</span>
           </a>
@@ -384,9 +516,9 @@
           <div class="overview-card">
             <div class="d-flex justify-content-between">
               <div>
-                <h6 class="text-muted">Total Lecturers</h6>
-                <h2>800</h2>
-                <p>Lectures</p>
+                <h6 class="text-muted">Total Department</h6>
+                <h2>12</h2>
+                <p>Active Departments</p>
               </div>
               <i class="bi bi-people icon text-warning"></i>
             </div>
@@ -407,8 +539,8 @@
           <div class="overview-card">
             <div class="d-flex justify-content-between">
               <div>
-                <h6 class="text-muted">Active Lecturers</h6>
-                <h2>700</h2>
+                <h6 class="text-muted">Top Performing Dept</h6>
+                <h2>85%</h2>
                 <p>The last 7 days</p>
               </div>
               <i class="bi bi-person-check icon text-danger"></i>
@@ -430,9 +562,9 @@
           <div class="overview-card">
             <div class="d-flex justify-content-between">
               <div>
-                <h6 class="text-muted">Average Course per Lecturer</h6>
-                <h2>5</h2>
-                <p>Courses</p>
+                <h6 class="text-muted">Top Attendance Dept</h6>
+                <h2>92%</h2>
+                <p>Computer Science</p>
               </div>
               <i class="bi bi-book icon text-primary"></i>
             </div>
@@ -452,132 +584,284 @@
       </div>
 
 
-      <div class="container mt-5">
-        <div class="d-flex justify-content-between align-items-center mb-3">
-            <h4 class="fw-bold">Lecturer Management</h4>
-            <div class="d-flex align-items-center">
-              <div class="search-bar me-3">
-                <i class="fas fa-search me-2"></i>
-                <input type="text" id="searchInput" class="form-control me-2 search-input" placeholder="Search">
-              </div>
-              <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="iconic">
-                <i class="bi bi-plus me-1 bigger-icon"></i> Add Lecturer
-            </button>
-            </div>
-        </div>
-        
+      <div class="container">
         <div class="table-container">
-            <table class="table table-hover align-middle" id="lecturerTable">
-                <thead>
-                    <tr>
-                        <th>Full Name</th>
-                        <th>Email Address</th>
-                        <th>Phone Number</th>
-                        <th>No of Assigned Courses</th>
-                        <th>Last Login</th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody id="tableBody">
-                    <tr class="mb-5">
-                        <td><img src="assets/img/Avatar.png" class="lecturer-img"> Dr Henry Ohims</td>
-                        <td>Droyim@funai.edu</td>
-                        <td>09067453211</td>
-                        <td>3</td>
-                        <td>2025-01-22 • 2:30pm</td>
-                        <td><i class="bi bi-three-dots-vertical"></i></td>
-                    </tr>
-                    <tr>
-                        <td><img src="assets/img/Avatar.png" class="lecturer-img"> Dr Henry Ohims</td>
-                        <td>Lindak@funai.edu</td>
-                        <td>08123456789</td>
-                        <td>4</td>
-                        <td>2025-01-18 • 1:10pm</td>
-                        <td><i class="bi bi-three-dots-vertical"></i></td>
-                    </tr>
-                    <tr>
-                        <td><img src="assets/img/Avatar.png" class="lecturer-img"> Dr Henry Ohims</td>
-                        <td>johnd@funai.edu</td>
-                        <td>08099887766</td>
-                        <td>2</td>
-                        <td>2025-02-02 • 11:45am</td>
-                        <td><i class="bi bi-three-dots-vertical"></i></td>
-                    </tr>
-                    <tr>
-                        <td><img src="assets/img/Avatar.png" class="lecturer-img"> Dr Henry Ohims</td>
-                        <td>gracea@funai.edu</td>
-                        <td>07034567891</td>
-                        <td>5</td>
-                        <td>2025-01-15 • 4:00pm</td>
-                        <td><i class="bi bi-three-dots-vertical"></i></td>
-                    </tr>
-                    <tr>
-                        <td><img src="assets/img/Avatar.png" class="lecturer-img"> Dr Henry Ohims</td>
-                        <td>samueln@funai.edu</td>
-                        <td>08111223344</td>
-                        <td>3</td>
-                        <td>2025-02-01 • 3:20pm</td>
-                        <td><i class="bi bi-three-dots-vertical"></i></td>
-                    </tr>
-                </tbody>
-            </table>
-            
-            <div class="d-flex justify-content-between">
+            <!-- Search -->
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <input type="text" id="searchInput" class="form-control bg-grey text-black" style="width: 30%; border: 1px solid #ccc;" placeholder="Search for students, ID, or courses..">
+          
+              <button class="dropdown-toggle togo">Percentage</button>
+          
+              <!-- Wrapping buttons in a flex container to control spacing -->
+              <div class="d-flex gap-2">
+                  <button class="btn-dept" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                      <i class="bi bi-plus me-1 v-icon"></i> Add Dept
+                  </button>
+                  <button class="btn-download">Export <i class="bi bi-download"></i></button>
+              </div>
+          </div>
+          
+      
+            <!-- Table -->
+            <div class="table-responsive">
+              <table class="table table-borderless align-middle">
+                  <thead>
+                      <tr>
+                          <th>Department Name</th>
+                          <th>Head of Department</th>
+                          <th>Total Student</th>
+                          <th>Average GPA</th>
+                          <th>Attendance Rate</th>
+                          <th>Action</th>
+
+                      </tr>
+                  </thead>
+                  <tbody id="tableBody">
+                      <tr>
+                        <td>Computer Science</td>
+                        <td class="d-flex align-items-center gap-2">
+                          <img src="assets/img/Avatar.png" class="profile-img">
+                          <div class="text-container">
+                              <span class="fw-bold">Ezekiel Olayiwola</span> 
+                              <small class="text-muted d-block">ezekiel@example.com</small>
+                          </div>
+                      </td>
+                        <td>500</td>
+                        <td>87%</td>
+                        <td><div class="progress"><div class="progress-bar" style="width: 90%;"></div></div> 90%</td>
+                          <td>
+                              <div class="dropdown">
+                                  <button class="btn btn-light border-0 p-0" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                      <i class="bi bi-three-dots fs-5"></i>
+                                  </button>
+                                  <ul class="dropdown-menu">
+                                      <li><a class="dropdown-item" href="#"><i class="bi bi-person"></i> View Details</a></li>
+                                      <li><a class="dropdown-item" href="#"><i class="bi bi-pencil-square"></i> Edit Department</a></li>
+                                      <li>
+                                        <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#removeDeptModal">
+                                          <i class="bi bi-trash"></i> Delete Department
+                                        </a>
+                                      </li>
+                                  </ul>
+                              </div>
+                          </td>
+                      </tr>
+                      <tr>
+                        <td>Computer Science</td>
+                        <td class="d-flex align-items-center gap-2">
+                          <img src="assets/img/Avatar.png" class="profile-img">
+                          <div class="text-container">
+                              <span class="fw-bold">Ezekiel Olayiwola</span> 
+                              <small class="text-muted d-block">ezekiel@example.com</small>
+                          </div>
+                      </td>
+                        <td>500</td>
+                        <td>87%</td>
+                        <td><div class="progress"><div class="progress-bar" style="width: 90%;"></div></div> 90%</td>
+                          <td>
+                              <div class="dropdown">
+                                  <button class="btn btn-light border-0 p-0" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                      <i class="bi bi-three-dots fs-5"></i>
+                                  </button>
+                                  <ul class="dropdown-menu">
+                                      <li><a class="dropdown-item" href="#"><i class="bi bi-person"></i> View Details</a></li>
+                                      <li><a class="dropdown-item" href="#"><i class="bi bi-send"></i> Send Reminders</a></li>
+                                      <li><a class="dropdown-item" href="#"><i class="bi bi-download"></i> Export</a></li>
+                                  </ul>
+                              </div>
+                          </td>
+                      </tr>
+                      <tr>
+                        <td>Computer Science</td>
+                         <td class="d-flex align-items-center gap-2">
+                          <img src="assets/img/Avatar.png" class="profile-img">
+                          <div class="text-container">
+                              <span class="fw-bold">Ezekiel Olayiwola</span> 
+                              <small class="text-muted d-block">ezekiel@example.com</small>
+                          </div>
+                      </td>
+                        <td>500</td>
+                        <td>87%</td>
+                        <td><div class="progress"><div class="progress-bar" style="width: 90%;"></div></div> 90%</td>
+                          <td>
+                              <div class="dropdown">
+                                  <button class="btn btn-light border-0 p-0" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                      <i class="bi bi-three-dots fs-5"></i>
+                                  </button>
+                                  <ul class="dropdown-menu">
+                                      <li><a class="dropdown-item" href="#"><i class="bi bi-person"></i> View Details</a></li>
+                                      <li><a class="dropdown-item" href="#"><i class="bi bi-send"></i> Send Reminders</a></li>
+                                      <li><a class="dropdown-item" href="#"><i class="bi bi-download"></i> Export</a></li>
+                                  </ul>
+                              </div>
+                          </td>
+                      </tr>
+                      <tr>
+                        <td>Computer Science</td>
+                        <td class="d-flex align-items-center gap-2">
+                          <img src="assets/img/Avatar.png" class="profile-img">
+                          <div class="text-container">
+                              <span class="fw-bold">Ezekiel Olayiwola</span> 
+                              <small class="text-muted d-block">ezekiel@example.com</small>
+                          </div>
+                      </td>
+                        <td>500</td>
+                        <td>87%</td>
+                        <td><div class="progress"><div class="progress-bar" style="width: 90%;"></div></div> 90%</td>
+                          <td>
+                              <div class="dropdown">
+                                  <button class="btn btn-light border-0 p-0" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                      <i class="bi bi-three-dots fs-5"></i>
+                                  </button>
+                                  <ul class="dropdown-menu">
+                                      <li><a class="dropdown-item" href="#"><i class="bi bi-person"></i> View Details</a></li>
+                                      <li><a class="dropdown-item" href="#"><i class="bi bi-send"></i> Send Reminders</a></li>
+                                      <li><a class="dropdown-item" href="#"><i class="bi bi-download"></i> Export</a></li>
+                                  </ul>
+                              </div>
+                          </td>
+                      </tr>
+                      <tr>
+                        <td>Computer Science</td>
+                        <td class="d-flex align-items-center gap-2">
+                          <img src="assets/img/Avatar.png" class="profile-img">
+                          <div class="text-container">
+                              <span class="fw-bold">Ezekiel Olayiwola</span> 
+                              <small class="text-muted d-block">ezekiel@example.com</small>
+                          </div>
+                      </td>
+                        <td>500</td>
+                        <td>87%</td>
+                        <td><div class="progress"><div class="progress-bar" style="width: 90%;"></div></div> 90%</td>
+                          <td>
+                              <div class="dropdown">
+                                  <button class="btn btn-light border-0 p-0" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                      <i class="bi bi-three-dots fs-5"></i>
+                                  </button>
+                                  <ul class="dropdown-menu">
+                                      <li><a class="dropdown-item" href="#"><i class="bi bi-person"></i> View Details</a></li>
+                                      <li><a class="dropdown-item" href="#"><i class="bi bi-send"></i> Send Reminders</a></li>
+                                      <li><a class="dropdown-item" href="#"><i class="bi bi-download"></i> Export</a></li>
+                                  </ul>
+                              </div>
+                          </td>
+                      </tr>
+                      <tr>
+                        <td>Computer Science</td>
+                        <td class="d-flex align-items-center gap-2">
+                          <img src="assets/img/Avatar.png" class="profile-img">
+                          <div class="text-container">
+                              <span class="fw-bold">Ezekiel Olayiwola</span> 
+                              <small class="text-muted d-block">ezekiel@example.com</small>
+                          </div>
+                      </td>
+                        <td>500</td>
+                        <td>87%</td>
+                        <td><div class="progress"><div class="progress-bar" style="width: 90%;"></div></div> 90%</td>
+                          <td>
+                              <div class="dropdown">
+                                  <button class="btn btn-light border-0 p-0" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                      <i class="bi bi-three-dots fs-5"></i>
+                                  </button>
+                                  <ul class="dropdown-menu">
+                                      <li><a class="dropdown-item" href="#"><i class="bi bi-person"></i> View Details</a></li>
+                                      <li><a class="dropdown-item" href="#"><i class="bi bi-send"></i> Send Reminders</a></li>
+                                      <li><a class="dropdown-item" href="#"><i class="bi bi-download"></i> Export</a></li>
+                                  </ul>
+                              </div>
+                          </td>
+                      </tr>
+                  </tbody>
+              </table>
+              
+              <!-- Bootstrap 5 JS -->
+              
+              
+              <!-- Bootstrap 5 JS (Make sure to include this for dropdowns to work) -->
+              <div class="d-flex justify-content-between">
                 <button class="btn btn-light" id="prevPage"><i class="bi bi-arrow-left"></i> Previous</button>
                 <nav>
                     <ul class="pagination" id="pagination"></ul>
                 </nav>
                 <button class="btn btn-light" id="nextPage">Next <i class="bi bi-arrow-right"></i></button>
             </div>
+            </div>
+      
+        
+      
         </div>
-    </div>
+      </div>
 <!-- modal pop up -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">New Course</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
             <form>
               <div class="mb-3">
-                <label for="recipient-name" style="color: #737373;" class="col-form-label">Course</label>
+                <label for="recipient-name" style="color: #737373;" class="col-form-label">Name of Department</label>
                 <input type="text" placeholder="CSC 411: Human Computer Interface" class="form-control" id="recipient-name">
               </div>
               <div class="mb-3">
-                  <label for="recipient-name" style="color: #737373;" class="col-form-label">Faculty</label>
+                  <label for="recipient-name" style="color: #737373;" class="col-form-label">Name of Head of Department</label>
                   <input type="text" placeholder="Physical Sciences" class="form-control" id="recipient-name">
                 </div>
                 <div class="mb-3">
-                  <label for="recipient-name" style="color: #737373;" class="col-form-label">Department</label>
+                  <label for="recipient-name" style="color: #737373;" class="col-form-label">Total Student</label>
                   <input type="text" placeholder="Computer Science" class="form-control" id="recipient-name">
                 </div>
 
-                <div class="row">
-                <div class="col-6">
-                  <div class="form-group">
-                  <label for="recipient-name" style="color: #737373;" class="col-form-label">Department</label>
-
-                    <select class="form-select" aria-label="Default select example">
-                        <option selected>To all Student</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                      </select>
-                </div>
-                </div>
-                <div class="col-6">
-                  <label for="recipient-name" style="color: #737373;" class="col-form-label">No of courses</label>
-                  <input type="text" placeholder="e.g 3" class="form-control" id="recipient-name">
-                </div>
+                <div class="mb-3">
+                  <label for="hod-picture" class="col-form-label text-dark fw-bold">Add Picture of the HOD</label>
+                  <div class="upload-box">
+                      <input type="file" id="hod-picture" class="file-input" accept="image/*">
+                      <div class="upload-content">
+                          <i class="bi bi-camera text-muted"></i>
+                          <span class="text-muted">Add photo</span>
+                      </div>
+                  </div>
               </div>
+                
               
             </form>
           </div>
           <div class="modal-footer">
             <button style="width: 100%; border: none; background-color: #25D366; color: #fff; padding: 10px 12px; border-radius: 5px;" >Save</button>
           </div>
+          </div>
+        </div>
+      </div>
+
+      
+      <!-- delete -->
+      <div class="modal fade" id="removeDeptModal" tabindex="-1" aria-labelledby="removeDeptModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content custom-modal">
+            
+            <!-- Modal Header -->
+            <div class="modal-header custom-header">
+              <h5 class="modal-title d-flex align-items-center">
+                <i class="bi bi-exclamation-triangle-fill me-2"></i> Remove Department
+              </h5>
+            </div>
+      
+            <!-- Modal Body -->
+            <div class="modal-body text-center">
+              <p class="confirm-text">Are you sure you want to remove this Department?</p>
+            </div>
+      
+            <!-- Modal Footer -->
+            <div class="modal-footer d-flex justify-content-center">
+              <button type="button" class="btn custom-remove-btn">
+                <i class="bi bi-trash-fill me-2"></i> Remove
+              </button>
+              <button type="button" class="btn custom-cancel-btn" data-bs-dismiss="modal">
+                <i class="bi bi-x-circle me-2"></i> Cancel
+              </button>
+            </div>
+      
           </div>
         </div>
       </div>

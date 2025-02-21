@@ -47,6 +47,87 @@
         padding: 0 10px;
         font-weight: bold;
     }
+
+    .table-container {
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+  }
+  .table {
+      color: white;
+  }
+  .table thead {
+      background: #fff;
+      color: #000;
+  }
+  .table tbody tr {
+      background: #fff;
+      color: #000;
+  }
+  .table tbody td{
+    color: #737373;
+  }
+  .table tbody tr:hover {
+      background: #f1f1f1;
+  }
+  .profile-img {
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-right: 10px;
+  }
+  .progress {
+      height: 6px;
+      border-radius: 5px;
+      background: #fff;
+  }
+  .progress-bar {
+      background-color: #24AA4E;
+      border-radius: 5px;
+  }
+  .togo {
+      background: #fff;
+      color: #000;
+      border: 1px solid #ccc;
+      padding: 8px 14px;
+      border-radius: 8px;
+  }
+  .togo:hover {
+      background: #fff;
+  }
+  .btn-download {
+      background: #24AA4E;
+      color: #fff;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 8px;
+  }
+  .btn-download:hover {
+      background: #1E8A3E;
+  }
+  .pagination .page-link {
+      background: #2A2A2A;
+      color: white;
+      border: none;
+      margin: 0 5px;
+      border-radius: 8px;
+  }
+  .pagination .page-item.active .page-link {
+      background: #24AA4E;
+      color: white;
+  }
+  .pagination .page-link:hover {
+      background: #373737;
+  }
+  .checkbox {
+      width: 18px;
+      height: 18px;
+  }
+  .actions {
+      font-size: 1.2rem;
+      cursor: pointer;
+  }
 </style>
 
 
@@ -246,7 +327,7 @@
   <aside id="sidebar" class="sidebar">
     <ul class="sidebar-nav" id="sidebar-nav">
       <li class="nav-item">
-        <a class="nav-link " href="index.html">
+        <a class="nav-link collapsed" href="index.html">
           <i class="bi bi-grid-fill"></i>
           <span>Dashboard</span>
         </a>
@@ -254,7 +335,7 @@
       <!-- End Dashboard Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="attendance.html">
+        <a class="nav-link" href="attendance.html">
           <i class="bi bi-calendar-week"></i>
           <span>Attendance</span>
         </a>
@@ -269,7 +350,7 @@
       </li>
       <!-- End Lecturers Page Nav -->
 
-      <li class="nav-item">
+      <li class="nav-item collapsed">
         <a class="nav-link collapsed" href="department.html">
           <i class="ri ri-book-2-line"></i>
           <span>Department</span>
@@ -291,8 +372,7 @@
 
     <div class="pagetitle mb-5 d-flex justify-content-between align-items-center">
       <div>
-          <h1>Overview</h1>
-          <p>Good Morning, Admin. Here's a quick snapshot of your school today.</p>
+          <h1>Attendance Overview</h1>
       </div>
       <div class="d-flex align-items-center bg-light p-2 rounded border" id="calendarTrigger">
           <i class="bi bi-calendar me-2"></i>
@@ -331,7 +411,7 @@
               </div>
               <h3 class="num">87%</h3>
               <p class="text-small">
-                  Below 75% attendance
+                  University Wide
                   <span class="text-red"><i class="bi bi-arrow-down"></i> 10%</span>
               </p>
           </div>
@@ -348,7 +428,7 @@
               </div>
               <h3 class="num">250</h3>
               <p class="text-small">
-                  University attendance
+                  Below 75% attendance
                   <span class="text-green"><i class="bi bi-arrow-up"></i> 20%</span>
               </p>
           </div>
@@ -365,7 +445,7 @@
               </div>
               <h3 class="num">92%</h3>
               <p class="text-small">
-                  Below 75% attendance
+                  attendance
                   <span class="text-green"><i class="bi bi-arrow-up"></i> 20%</span>
               </p>
           </div>
@@ -409,43 +489,179 @@
     </div>
 </div>
 
-<div class="container mt-4">
-  <div class="row">
-      <div class="col-md-6">
-          <div class="card p-3">
-              <h6>Top 5 Faculty Attendance</h6>
-              <canvas id="facultyChart"></canvas>
+<!-- student name  -->
+
+<div class="container">
+  <div class="table-container">
+      <!-- Search -->
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <input type="text" id="searchInput" class="form-control bg-grey text-black" style="width: 30%; border: 1px solid #ccc;" placeholder="Search for students, ID, or courses..">
+
+
+          <div class="d-flex gap-2">
+              <button class="dropdown-toggle togo">Timeframe</button>
+              <button class="dropdown-toggle togo">Dept/Course</button>
+              <button class="dropdown-toggle togo">Percentage</button>
           </div>
+
+          <button class="btn-download">Export <i class="bi bi-download"></i></button> 
       </div>
-      <div class="col-md-6">
-          <div class="card p-3">
-              <h6 class="head">Attendance leaderboard (Top 5 Department)</h6>
-              <div>
-                  <p>1. Med & Surgery <span class="float-end">92%</span></p>
-                  <div class="progress mb-2">
-                      <div class="progress-bar sss" style="width: 92%;"></div>
-                  </div>
-                  <p>2. Law <span class="float-end">89%</span></p>
-                  <div class="progress mb-2">
-                      <div class="progress-bar danger" style="width: 89%;"></div>
-                  </div>
-                  <p>3. Anatomy <span class="float-end">72%</span></p>
-                  <div class="progress mb-2">
-                      <div class="progress-bar orange" style="width: 72%;"></div>
-                  </div>
-                  <p>4. Computer Sci <span class="float-end">61%</span></p>
-                  <div class="progress mb-2">
-                      <div class="progress-bar bg-primary" style="width: 61%;"></div>
-                  </div>
-                  <p>5. Mass Com <span class="float-end">55%</span></p>
-                  <div class="progress mb-2">
-                      <div class="progress-bar bg-secondary" style="width: 55%;"></div>
-                  </div>
-              </div>
-          </div>
+
+      <!-- Table -->
+      <div class="table-responsive">
+        <table class="table table-borderless align-middle">
+            <thead>
+                <tr>
+                    <th>Student Name</th>
+                    <th>Student ID</th>
+                    <th>Attendance Rate %</th>
+                    <th>Classes Attended</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody">
+                <tr>
+                  <td class="d-flex align-items-center gap-2">
+                    <img src="assets/img/Avatar.png" class="profile-img">
+                    <div class="text-container">
+                        <span class="fw-bold">Ezekiel Olayiwola</span> 
+                        <small class="text-muted d-block">ezekiel@example.com</small>
+                    </div>
+                </td>
+                    <td>2020/SC/162234</td>
+                    <td><div class="progress"><div class="progress-bar" style="width: 90%;"></div></div> 90%</td>
+                    <td>140/160</td>
+                    <td>
+                        <div class="dropdown">
+                            <button class="btn btn-light border-0 p-0" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-three-dots fs-5"></i>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#"><i class="bi bi-person"></i> View Details</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="bi bi-send"></i> Send Reminders</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="bi bi-download"></i> Export</a></li>
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                  <td class="d-flex align-items-center gap-2">
+                    <img src="assets/img/Avatar.png" class="profile-img">
+                    <div class="text-container">
+                        <span class="fw-bold">Ezekiel Olayiwola</span> 
+                        <small class="text-muted d-block">ezekiel@example.com</small>
+                    </div>
+                </td>
+                    <td>2020/SC/162235</td>
+                    <td><div class="progress"><div class="progress-bar" style="width: 80%;"></div></div> 80%</td>
+                    <td>130/160</td>
+                    <td>
+                        <div class="dropdown">
+                            <button class="btn btn-light border-0 p-0" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-three-dots fs-5"></i>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#"><i class="bi bi-person"></i> View Details</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="bi bi-send"></i> Send Reminders</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="bi bi-download"></i> Export</a></li>
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                  <td class="d-flex align-items-center gap-2">
+                    <img src="assets/img/Avatar.png" class="profile-img">
+                    <div class="text-container">
+                        <span class="fw-bold">Ezekiel Olayiwola</span> 
+                        <small class="text-muted d-block">ezekiel@example.com</small>
+                    </div>
+                </td>
+                    <td>2020/SC/162235</td>
+                    <td><div class="progress"><div class="progress-bar" style="width: 80%;"></div></div> 80%</td>
+                    <td>130/160</td>
+                    <td>
+                        <div class="dropdown">
+                            <button class="btn btn-light border-0 p-0" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-three-dots fs-5"></i>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#"><i class="bi bi-person"></i> View Details</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="bi bi-send"></i> Send Reminders</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="bi bi-download"></i> Export</a></li>
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                  <td class="d-flex align-items-center gap-2">
+                    <img src="assets/img/Avatar.png" class="profile-img">
+                    <div class="text-container">
+                        <span class="fw-bold">Ezekiel Olayiwola</span> 
+                        <small class="text-muted d-block">ezekiel@example.com</small>
+                    </div>
+                </td>
+                    <td>2020/SC/162235</td>
+                    <td><div class="progress"><div class="progress-bar" style="width: 80%;"></div></div> 80%</td>
+                    <td>130/160</td>
+                    <td>
+                        <div class="dropdown">
+                            <button class="btn btn-light border-0 p-0" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-three-dots fs-5"></i>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#"><i class="bi bi-person"></i> View Details</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="bi bi-send"></i> Send Reminders</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="bi bi-download"></i> Export</a></li>
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                  <td class="d-flex align-items-center gap-2">
+                    <img src="assets/img/Avatar.png" class="profile-img">
+                    <div class="text-container">
+                        <span class="fw-bold">Ezekiel Olayiwola</span> 
+                        <small class="text-muted d-block">ezekiel@example.com</small>
+                    </div>
+                </td>
+                    <td>2020/SC/162235</td>
+                    <td><div class="progress"><div class="progress-bar" style="width: 80%;"></div></div> 80%</td>
+                    <td>130/160</td>
+                    <td>
+                        <div class="dropdown">
+                            <button class="btn btn-light border-0 p-0" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-three-dots fs-5"></i>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#"><i class="bi bi-person"></i> View Details</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="bi bi-send"></i> Send Reminders</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="bi bi-download"></i> Export</a></li>
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <!-- Bootstrap 5 JS -->
+        
+        
+        <div class="d-flex justify-content-between">
+          <button class="btn btn-light" id="prevPage"><i class="bi bi-arrow-left"></i> Previous</button>
+          <nav>
+              <ul class="pagination" id="pagination"></ul>
+          </nav>
+          <button class="btn btn-light" id="nextPage">Next <i class="bi bi-arrow-right"></i></button>
       </div>
+        
+      </div>
+
+      <!-- Pagination -->
+     
+
   </div>
 </div>
+
 
 
   
@@ -457,6 +673,79 @@
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 <!-- calendar -->
+
+<!-- table js -->
+
+<script>
+  const rowsPerPage = 5;
+  let currentPage = 1;
+
+  function renderTable() {
+      const tableBody = document.getElementById("tableBody");
+      const rows = Array.from(tableBody.getElementsByTagName("tr"));
+      const totalRows = rows.length;
+
+      // Hide all rows initially
+      rows.forEach(row => row.style.display = "none");
+
+      // Show only the required rows for the current page
+      const start = (currentPage - 1) * rowsPerPage;
+      const end = start + rowsPerPage;
+      for (let i = start; i < end && i < totalRows; i++) {
+          rows[i].style.display = "";
+      }
+
+      renderPagination(totalRows);
+  }
+
+  function renderPagination(totalRows) {
+      const pagination = document.getElementById("pagination");
+      pagination.innerHTML = "";
+      const totalPages = Math.ceil(totalRows / rowsPerPage);
+
+      for (let i = 1; i <= totalPages; i++) {
+          pagination.innerHTML += `<li class="page-item ${i === currentPage ? 'active' : ''}">
+              <a class="page-link" href="#" onclick="changePage(${i})">${i}</a></li>`;
+      }
+
+      document.getElementById("prevPage").disabled = currentPage === 1;
+      document.getElementById("nextPage").disabled = currentPage === totalPages;
+  }
+
+  function changePage(page) {
+      currentPage = page;
+      renderTable();
+  }
+
+  document.getElementById("prevPage").addEventListener("click", () => {
+      if (currentPage > 1) changePage(currentPage - 1);
+  });
+
+  document.getElementById("nextPage").addEventListener("click", () => {
+      const tableBody = document.getElementById("tableBody");
+      const totalRows = tableBody.getElementsByTagName("tr").length;
+      if (currentPage < Math.ceil(totalRows / rowsPerPage)) changePage(currentPage + 1);
+  });
+
+  // Search functionality
+  document.getElementById("searchInput").addEventListener("input", function () {
+      const searchText = this.value.toLowerCase();
+      const tableBody = document.getElementById("tableBody");
+      const rows = Array.from(tableBody.getElementsByTagName("tr"));
+
+      rows.forEach(row => {
+          const text = row.innerText.toLowerCase();
+          row.style.display = text.includes(searchText) ? "" : "none";
+      });
+
+      // Reset to first page when searching
+      currentPage = 1;
+      renderPagination(rows.filter(row => row.style.display !== "none").length);
+  });
+
+  renderTable();
+</script>
+
 <script>
   document.addEventListener("DOMContentLoaded", function() {
       flatpickr("#datepicker", {

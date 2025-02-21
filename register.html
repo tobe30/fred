@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Registration</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+
+    <style>
+        /* Centering the form */
+        body {
+            background-color: #f8f9fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .card {
+            width: 400px;
+            border-radius: 12px;
+            box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
+            padding: 25px;
+            background-color: white;
+        }
+
+        /* Logo Styling */
+        .logo img{
+            display: flex;
+            align-items: center;
+            font-size: 2px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .logo i {
+            color: #00c853;
+            font-size: 20px;
+            margin-right: 5px;
+        }
+
+        /* Title Styling */
+        .form-title {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .form-subtitle {
+            font-size: 14px;
+            color: #777;
+            margin-bottom: 15px;
+        }
+
+        /* Custom Input Fields */
+        .form-control {
+            border-radius: 8px;
+            font-size: 14px;
+            padding: 12px;
+        }
+
+        /* Custom Select */
+        .form-select {
+            border-radius: 8px;
+            font-size: 14px;
+            padding: 12px;
+        }
+
+        /* Button Styling */
+        .btn-custom {
+            background-color: #24AA4E;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 8px;
+            padding: 12px;
+            width: 100%;
+            border: none;
+        }
+
+        .btn-custom:hover {
+            background-color: #009624;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Registration Form -->
+    <div class="card">
+        <!-- Logo -->
+        <div class="logo">
+            <img src="assets/img/fred-logo.png" alt="">
+        </div>
+
+        <!-- Title -->
+        <p class="form-title">Create your Admin Account!</p>
+        <p class="form-subtitle">Kindly fill in the required data</p>
+
+        <!-- Form -->
+        <form>
+            <!-- Select University -->
+            <div class="mb-3">
+                <select class="form-select">
+                    <option selected>Select University</option>
+                    <option value="1">University A</option>
+                    <option value="2">University B</option>
+                    <option value="3">University C</option>
+                </select>
+            </div>
+
+            <!-- Full Name -->
+            <div class="mb-3">
+                <label for="Fullname">Full name</label>
+                <input type="text" class="form-control" placeholder="Full name">
+            </div>
+
+            <!-- Email Address -->
+            <div class="mb-3">
+                <label for="Email address">Email Address</label>
+
+                <input type="email" class="form-control" placeholder="Email Address">
+            </div>
+
+            <!-- Password -->
+            <div class="mb-3">
+                <label for="Password">Password</label>
+                <input type="password" class="form-control" placeholder="Password">
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-custom">Create Account</button>
+        </form>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
