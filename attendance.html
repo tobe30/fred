@@ -329,7 +329,7 @@
       <li class="nav-item">
         <a class="nav-link collapsed" href="index.html">
           <i class="bi bi-grid-fill"></i>
-          <span>Dashboard</span>
+          <span>Overview</span>
         </a>
       </li>
       <!-- End Dashboard Nav -->
@@ -450,217 +450,220 @@
               </p>
           </div>
       </div>
-  </div>
-  
-  <div class="container mt-4">
-    <div class="row">
-        <div class="col-md-6">
-            <div class="card p-3">
-                <div class="d-flex justify-content-between align-items-center">
-                    <h5 style="color:#000;">Attendance Key Trend</h5>
-                    <button class="btn btn-light border">📅 13th Jan, 2025</button>
-                </div>
-                <div class="chart-container">
-                    <canvas id="lineChart"></canvas>
+
+      <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-6 d-flex">
+                <div class="card p-3 w-100 h-100">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h5 style="color:#000;">Attendance Key Trend</h5>
+                        <button class="btn btn-light border">📅 13th Jan, 2025</button>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="lineChart"></canvas>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-md-6">
-            <div class="card p-3">
-                <h5 style="color:#000;">Attendance by Dept</h5>
-                <select class="form-select w-50 mb-3">
-                    <option selected>Computer Sc.</option>
-                    <option>100L</option>
-                    <option>200L</option>
-                    <option>300L</option>
-                    <option>400L</option>
-                </select>
-                <div class="dept-labels">
-                    <span>100L</span>
-                    <span>200L</span>
-                    <span>300L</span>
-                    <span>400L</span>
-                </div>
-                <div class="chart-container">
-                    <canvas id="barChart"></canvas>
+            <div class="col-md-6 d-flex">
+                <div class="card p-3 w-100 h-100">
+                    <h5 style="color:#000;">Attendance by Dept</h5>
+                    <select class="form-select w-50 mb-3">
+                        <option selected>Computer Sc.</option>
+                        <option selected>Computer Sc.</option>
+                        <option>Biological Science</option>
+                        <option>Economy</option>
+                        <option>English</option>
+                        <option>Law</option>
+                    </select>
+                    <div class="dept-labels">
+                      <span class="level-btn" style="cursor: pointer;" data-level="100L">100L</span>
+                      <span class="level-btn" style="cursor: pointer;" data-level="200L">200L</span>
+                      <span class="level-btn" style="cursor: pointer;" data-level="300L">300L</span>
+                      <span class="level-btn" style="cursor: pointer;" data-level="400L">400L</span>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="barChart"></canvas>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-
-<!-- student name  -->
-
-<div class="container">
-  <div class="table-container">
-      <!-- Search -->
-      <div class="d-flex justify-content-between align-items-center mb-3">
-        <input type="text" id="searchInput" class="form-control bg-grey text-black" style="width: 30%; border: 1px solid #ccc;" placeholder="Search for students, ID, or courses..">
-
-
-          <div class="d-flex gap-2">
-              <button class="dropdown-toggle togo">Timeframe</button>
-              <button class="dropdown-toggle togo">Dept/Course</button>
-              <button class="dropdown-toggle togo">Percentage</button>
+    
+    <!-- student name  -->
+    
+    <div class="container">
+      <div class="table-container">
+          <!-- Search -->
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <input type="text" id="searchInput" class="form-control bg-grey text-black" style="width: 30%; border: 1px solid #ccc;" placeholder="Search for students, ID, or courses..">
+    
+    
+              <div class="d-flex gap-2">
+                  <button class="dropdown-toggle togo">Timeframe</button>
+                  <button class="dropdown-toggle togo">Dept/Course</button>
+                  <button class="dropdown-toggle togo">Percentage</button>
+              </div>
+    
+              <button class="btn-download">Export <i class="bi bi-download"></i></button> 
           </div>
-
-          <button class="btn-download">Export <i class="bi bi-download"></i></button> 
+    
+          <!-- Table -->
+          <div class="table-responsive">
+            <table class="table table-borderless align-middle">
+                <thead>
+                    <tr>
+                        <th>Student Name</th>
+                        <th>Student ID</th>
+                        <th>Attendance Rate %</th>
+                        <th>Classes Attended</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                    <tr>
+                      <td class="d-flex align-items-center gap-2">
+                        <img src="assets/img/Avatar.png" class="profile-img">
+                        <div class="text-container">
+                            <span class="fw-bold">Ezekiel Olayiwola</span> 
+                            <small class="text-muted d-block">ezekiel@example.com</small>
+                        </div>
+                    </td>
+                        <td>2020/SC/162234</td>
+                        <td><div class="progress"><div class="progress-bar" style="width: 90%;"></div></div> 90%</td>
+                        <td>140/160</td>
+                        <td>
+                            <div class="dropdown">
+                                <button class="btn btn-light border-0 p-0" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="bi bi-three-dots fs-5"></i>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#"><i class="bi bi-person"></i> View Details</a></li>
+                                    <li><a class="dropdown-item" href="#"><i class="bi bi-send"></i> Send Reminders</a></li>
+                                    <li><a class="dropdown-item" href="#"><i class="bi bi-download"></i> Export</a></li>
+                                </ul>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                      <td class="d-flex align-items-center gap-2">
+                        <img src="assets/img/Avatar.png" class="profile-img">
+                        <div class="text-container">
+                            <span class="fw-bold">Ezekiel Olayiwola</span> 
+                            <small class="text-muted d-block">ezekiel@example.com</small>
+                        </div>
+                    </td>
+                        <td>2020/SC/162235</td>
+                        <td><div class="progress"><div class="progress-bar" style="width: 80%;"></div></div> 80%</td>
+                        <td>130/160</td>
+                        <td>
+                            <div class="dropdown">
+                                <button class="btn btn-light border-0 p-0" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="bi bi-three-dots fs-5"></i>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#"><i class="bi bi-person"></i> View Details</a></li>
+                                    <li><a class="dropdown-item" href="#"><i class="bi bi-send"></i> Send Reminders</a></li>
+                                    <li><a class="dropdown-item" href="#"><i class="bi bi-download"></i> Export</a></li>
+                                </ul>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                      <td class="d-flex align-items-center gap-2">
+                        <img src="assets/img/Avatar.png" class="profile-img">
+                        <div class="text-container">
+                            <span class="fw-bold">Ezekiel Olayiwola</span> 
+                            <small class="text-muted d-block">ezekiel@example.com</small>
+                        </div>
+                    </td>
+                        <td>2020/SC/162235</td>
+                        <td><div class="progress"><div class="progress-bar" style="width: 80%;"></div></div> 80%</td>
+                        <td>130/160</td>
+                        <td>
+                            <div class="dropdown">
+                                <button class="btn btn-light border-0 p-0" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="bi bi-three-dots fs-5"></i>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#"><i class="bi bi-person"></i> View Details</a></li>
+                                    <li><a class="dropdown-item" href="#"><i class="bi bi-send"></i> Send Reminders</a></li>
+                                    <li><a class="dropdown-item" href="#"><i class="bi bi-download"></i> Export</a></li>
+                                </ul>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                      <td class="d-flex align-items-center gap-2">
+                        <img src="assets/img/Avatar.png" class="profile-img">
+                        <div class="text-container">
+                            <span class="fw-bold">Ezekiel Olayiwola</span> 
+                            <small class="text-muted d-block">ezekiel@example.com</small>
+                        </div>
+                    </td>
+                        <td>2020/SC/162235</td>
+                        <td><div class="progress"><div class="progress-bar" style="width: 80%;"></div></div> 80%</td>
+                        <td>130/160</td>
+                        <td>
+                            <div class="dropdown">
+                                <button class="btn btn-light border-0 p-0" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="bi bi-three-dots fs-5"></i>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#"><i class="bi bi-person"></i> View Details</a></li>
+                                    <li><a class="dropdown-item" href="#"><i class="bi bi-send"></i> Send Reminders</a></li>
+                                    <li><a class="dropdown-item" href="#"><i class="bi bi-download"></i> Export</a></li>
+                                </ul>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                      <td class="d-flex align-items-center gap-2">
+                        <img src="assets/img/Avatar.png" class="profile-img">
+                        <div class="text-container">
+                            <span class="fw-bold">Ezekiel Olayiwola</span> 
+                            <small class="text-muted d-block">ezekiel@example.com</small>
+                        </div>
+                    </td>
+                        <td>2020/SC/162235</td>
+                        <td><div class="progress"><div class="progress-bar" style="width: 80%;"></div></div> 80%</td>
+                        <td>130/160</td>
+                        <td>
+                            <div class="dropdown">
+                                <button class="btn btn-light border-0 p-0" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="bi bi-three-dots fs-5"></i>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#"><i class="bi bi-person"></i> View Details</a></li>
+                                    <li><a class="dropdown-item" href="#"><i class="bi bi-send"></i> Send Reminders</a></li>
+                                    <li><a class="dropdown-item" href="#"><i class="bi bi-download"></i> Export</a></li>
+                                </ul>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <!-- Bootstrap 5 JS -->
+            
+            
+            <div class="d-flex justify-content-between">
+              <button class="btn btn-light" id="prevPage"><i class="bi bi-arrow-left"></i> Previous</button>
+              <nav>
+                  <ul class="pagination" id="pagination"></ul>
+              </nav>
+              <button class="btn btn-light" id="nextPage">Next <i class="bi bi-arrow-right"></i></button>
+          </div>
+            
+          </div>
+    
+          <!-- Pagination -->
+         
+    
       </div>
-
-      <!-- Table -->
-      <div class="table-responsive">
-        <table class="table table-borderless align-middle">
-            <thead>
-                <tr>
-                    <th>Student Name</th>
-                    <th>Student ID</th>
-                    <th>Attendance Rate %</th>
-                    <th>Classes Attended</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody id="tableBody">
-                <tr>
-                  <td class="d-flex align-items-center gap-2">
-                    <img src="assets/img/Avatar.png" class="profile-img">
-                    <div class="text-container">
-                        <span class="fw-bold">Ezekiel Olayiwola</span> 
-                        <small class="text-muted d-block">ezekiel@example.com</small>
-                    </div>
-                </td>
-                    <td>2020/SC/162234</td>
-                    <td><div class="progress"><div class="progress-bar" style="width: 90%;"></div></div> 90%</td>
-                    <td>140/160</td>
-                    <td>
-                        <div class="dropdown">
-                            <button class="btn btn-light border-0 p-0" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <i class="bi bi-three-dots fs-5"></i>
-                            </button>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#"><i class="bi bi-person"></i> View Details</a></li>
-                                <li><a class="dropdown-item" href="#"><i class="bi bi-send"></i> Send Reminders</a></li>
-                                <li><a class="dropdown-item" href="#"><i class="bi bi-download"></i> Export</a></li>
-                            </ul>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                  <td class="d-flex align-items-center gap-2">
-                    <img src="assets/img/Avatar.png" class="profile-img">
-                    <div class="text-container">
-                        <span class="fw-bold">Ezekiel Olayiwola</span> 
-                        <small class="text-muted d-block">ezekiel@example.com</small>
-                    </div>
-                </td>
-                    <td>2020/SC/162235</td>
-                    <td><div class="progress"><div class="progress-bar" style="width: 80%;"></div></div> 80%</td>
-                    <td>130/160</td>
-                    <td>
-                        <div class="dropdown">
-                            <button class="btn btn-light border-0 p-0" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <i class="bi bi-three-dots fs-5"></i>
-                            </button>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#"><i class="bi bi-person"></i> View Details</a></li>
-                                <li><a class="dropdown-item" href="#"><i class="bi bi-send"></i> Send Reminders</a></li>
-                                <li><a class="dropdown-item" href="#"><i class="bi bi-download"></i> Export</a></li>
-                            </ul>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                  <td class="d-flex align-items-center gap-2">
-                    <img src="assets/img/Avatar.png" class="profile-img">
-                    <div class="text-container">
-                        <span class="fw-bold">Ezekiel Olayiwola</span> 
-                        <small class="text-muted d-block">ezekiel@example.com</small>
-                    </div>
-                </td>
-                    <td>2020/SC/162235</td>
-                    <td><div class="progress"><div class="progress-bar" style="width: 80%;"></div></div> 80%</td>
-                    <td>130/160</td>
-                    <td>
-                        <div class="dropdown">
-                            <button class="btn btn-light border-0 p-0" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <i class="bi bi-three-dots fs-5"></i>
-                            </button>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#"><i class="bi bi-person"></i> View Details</a></li>
-                                <li><a class="dropdown-item" href="#"><i class="bi bi-send"></i> Send Reminders</a></li>
-                                <li><a class="dropdown-item" href="#"><i class="bi bi-download"></i> Export</a></li>
-                            </ul>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                  <td class="d-flex align-items-center gap-2">
-                    <img src="assets/img/Avatar.png" class="profile-img">
-                    <div class="text-container">
-                        <span class="fw-bold">Ezekiel Olayiwola</span> 
-                        <small class="text-muted d-block">ezekiel@example.com</small>
-                    </div>
-                </td>
-                    <td>2020/SC/162235</td>
-                    <td><div class="progress"><div class="progress-bar" style="width: 80%;"></div></div> 80%</td>
-                    <td>130/160</td>
-                    <td>
-                        <div class="dropdown">
-                            <button class="btn btn-light border-0 p-0" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <i class="bi bi-three-dots fs-5"></i>
-                            </button>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#"><i class="bi bi-person"></i> View Details</a></li>
-                                <li><a class="dropdown-item" href="#"><i class="bi bi-send"></i> Send Reminders</a></li>
-                                <li><a class="dropdown-item" href="#"><i class="bi bi-download"></i> Export</a></li>
-                            </ul>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                  <td class="d-flex align-items-center gap-2">
-                    <img src="assets/img/Avatar.png" class="profile-img">
-                    <div class="text-container">
-                        <span class="fw-bold">Ezekiel Olayiwola</span> 
-                        <small class="text-muted d-block">ezekiel@example.com</small>
-                    </div>
-                </td>
-                    <td>2020/SC/162235</td>
-                    <td><div class="progress"><div class="progress-bar" style="width: 80%;"></div></div> 80%</td>
-                    <td>130/160</td>
-                    <td>
-                        <div class="dropdown">
-                            <button class="btn btn-light border-0 p-0" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <i class="bi bi-three-dots fs-5"></i>
-                            </button>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#"><i class="bi bi-person"></i> View Details</a></li>
-                                <li><a class="dropdown-item" href="#"><i class="bi bi-send"></i> Send Reminders</a></li>
-                                <li><a class="dropdown-item" href="#"><i class="bi bi-download"></i> Export</a></li>
-                            </ul>
-                        </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        
-        <!-- Bootstrap 5 JS -->
-        
-        
-        <div class="d-flex justify-content-between">
-          <button class="btn btn-light" id="prevPage"><i class="bi bi-arrow-left"></i> Previous</button>
-          <nav>
-              <ul class="pagination" id="pagination"></ul>
-          </nav>
-          <button class="btn btn-light" id="nextPage">Next <i class="bi bi-arrow-right"></i></button>
-      </div>
-        
-      </div>
-
-      <!-- Pagination -->
-     
-
+    </div>
   </div>
-</div>
+  
+
 
 
 
@@ -809,23 +812,45 @@
     });
 
     // Bar Chart
-    const barCtx = document.getElementById('barChart').getContext('2d');
-    new Chart(barCtx, {
-        type: 'bar',
-        data: {
-            labels: ['Mon', 'Tue', 'Wed', 'Thur', 'Fri'],
-            datasets: [{
-                label: 'Percentage',
-                data: [90, 75, 85, 40, 50],
-                backgroundColor: '#24AA4E',
-                borderRadius: 10, // Adds rounded corners to the bars
-            }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false
-        }
-    });
+    // Sample data for each level
+const attendanceData = {
+  "100L": [90, 75, 85, 40, 50],
+  "200L": [80, 60, 70, 50, 40],
+  "300L": [95, 85, 80, 70, 65],
+  "400L": [60, 50, 40, 30, 20]
+};
+
+// Get the bar chart canvas
+const barCtx = document.getElementById('barChart').getContext('2d');
+
+// Create the initial bar chart
+let barChart = new Chart(barCtx, {
+  type: 'bar',
+  data: {
+      labels: ['Mon', 'Tue', 'Wed', 'Thur', 'Fri'],
+      datasets: [{
+          label: 'Percentage',
+          data: attendanceData["100L"], // Default data
+          backgroundColor: '#24AA4E',
+          borderRadius: 10,
+      }]
+  },
+  options: {
+      responsive: true,
+      maintainAspectRatio: false
+  }
+});
+
+// Add event listeners to each level button
+document.querySelectorAll('.level-btn').forEach(button => {
+  button.addEventListener('click', function() {
+      const level = this.getAttribute('data-level'); // Get the clicked level
+
+      // Update the chart data
+      barChart.data.datasets[0].data = attendanceData[level];
+      barChart.update();
+  });
+});
 </script>
   <!-- Vendor JS Files -->
   <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
