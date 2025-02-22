@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile & Activities</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.3/font/bootstrap-icons.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .card-custom {
+            border-radius: 12px;
+            padding: 20px;
+        }
+        .stat-box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .green { background: #d4edda; color: #155724; }
+        .orange { background: #ffeeba; color: #856404; }
+        .red { background: #f8d7da; color: #721c24; }
+        .blue { background: #cce5ff; color: #004085; }
+    </style>
+</head>
+<body>
+    <div class="container mt-4">
+        <div class="d-flex justify-content-between align-items-center">
+            <h4>Profile & Activities</h4>
+            <div>
+                <button class="btn btn-success"><i class="bi bi-download"></i> Download Info</button>
+            </div>
+        </div>
+        
+        <div class="card card-custom mt-3">
+            <div class="row align-items-center">
+                <div class="col-md-2 text-center">
+                    <img src="profile.jpg" class="rounded-circle" width="80" height="80">
+                </div>
+                <div class="col-md-10">
+                    <h5>Ezekiel Olayiwola</h5>
+                    <p>Dept: Computer Science | ID: 2020/SC/162234 | Phone: +234 8068495244 | Email: ezeydesign@gmail.com</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-3">
+            <div class="col-md-3"><div class="stat-box green"> <h5>12 Days</h5><p>Total Attendance</p></div></div>
+            <div class="col-md-3"><div class="stat-box orange"> <h5>7 Days</h5><p>Late Attendance</p></div></div>
+            <div class="col-md-3"><div class="stat-box red"> <h5>1 Day</h5><p>Undertime Attendance</p></div></div>
+            <div class="col-md-3"><div class="stat-box blue"> <h5>2 Days</h5><p>Total Absent</p></div></div>
+        </div>
+        
+        <div class="row mt-3">
+            <div class="col-md-6">
+                <div class="card card-custom">
+                    <h6>Class Days</h6>
+                    <h3>23 Days</h3>
+                </div>
+                <div class="card card-custom mt-3">
+                    <h6>Attendance Rate</h6>
+                    <h3>52%</h3>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card card-custom">
+                    <h6>Summary - Ezekiel Olayiwola</h6>
+                    <div class="row">
+                        <div class="col-3"><div class="stat-box green">12<br>Attendance</div></div>
+                        <div class="col-3"><div class="stat-box orange">7<br>Late</div></div>
+                        <div class="col-3"><div class="stat-box red">1<br>Undertime</div></div>
+                        <div class="col-3"><div class="stat-box blue">2<br>Absent</div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card card-custom mt-3">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>SN</th>
+                        <th>Names</th>
+                        <th>ID</th>
+                        <th>Progress</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>01</td>
+                        <td>Ezekiel Olayiwola</td>
+                        <td>2020/SC/162234</td>
+                        <td><div class="progress"><div class="progress-bar bg-success" style="width:90%">90%</div></div></td>
+                    </tr>
+                    <tr>
+                        <td>02</td>
+                        <td>Malcolm Johnson</td>
+                        <td>2020/SC/162234</td>
+                        <td><div class="progress"><div class="progress-bar bg-success" style="width:88%">88%</div></div></td>
+                    </tr>
+                    <tr>
+                        <td>03</td>
+                        <td>David Thompson</td>
+                        <td>2020/SC/162234</td>
+                        <td><div class="progress"><div class="progress-bar bg-success" style="width:85%">85%</div></div></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

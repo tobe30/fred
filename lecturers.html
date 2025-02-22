@@ -153,11 +153,11 @@
       </div>
       <!-- End Logo -->
       <i class="bi bi-list toggle-sidebar-btn"></i>
-
+  
       <nav class="header-nav ms-auto">
         <ul class="d-flex align-items-center">
             <li class="nav-item dropdown">
-
+  
                 <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
                   <i class="bi bi-bell"></i>
                   <span class="badge bg-danger badge-number">2</span>
@@ -230,15 +230,15 @@
                 </ul><!-- End Notification Dropdown Items -->
       
               </li><!-- End Notification Nav -->
-
+  
               <li class="nav-item dropdown">
-
+  
                 <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
                   <i class="bi bi-gear"></i>
                   <span class="badge bg-success badge-number"></span>
                 </a><!-- End Messages Icon -->
       
-
+  
       
               </li><!-- End Messages Nav -->
             
@@ -253,68 +253,12 @@
                 alt="Profile"
                 class="rounded-circle"
               />
-              <span class="d-none d-md-block dropdown-toggle ps-2"
+              <span class="d-none d-md-block ps-2"
                 >T. Marizu</span
               > </a
             ><!-- End Profile Iamge Icon -->
-
-            <ul
-              class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile"
-            >
-              <li class="dropdown-header">
-                <h6>Tobe Marizu</h6>
-                <span>Fred Dev</span>
-              </li>
-              <li>
-                <hr class="dropdown-divider" />
-              </li>
-
-              <li>
-                <a
-                  class="dropdown-item d-flex align-items-center"
-                  href="users-profile.html"
-                >
-                  <i class="bi bi-person"></i>
-                  <span>My Profile</span>
-                </a>
-              </li>
-              <li>
-                <hr class="dropdown-divider" />
-              </li>
-
-              <li>
-                <a
-                  class="dropdown-item d-flex align-items-center"
-                  href="users-profile.html"
-                >
-                  <i class="bi bi-gear"></i>
-                  <span>Account Settings</span>
-                </a>
-              </li>
-              <li>
-                <hr class="dropdown-divider" />
-              </li>
-
-              <li>
-                <a
-                  class="dropdown-item d-flex align-items-center"
-                  href="pages-faq.html"
-                >
-                  <i class="bi bi-question-circle"></i>
-                  <span>Need Help?</span>
-                </a>
-              </li>
-              <li>
-                <hr class="dropdown-divider" />
-              </li>
-
-              <li>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                  <i class="bi bi-box-arrow-right"></i>
-                  <span>Sign Out</span>
-                </a>
-              </li>
-            </ul>
+  
+            
             <!-- End Profile Dropdown Items -->
           </li>
           <!-- End Profile Nav -->
@@ -330,7 +274,7 @@
         <li class="nav-item">
           <a class="nav-link collapsed" href="index.html">
             <i class="bi bi-grid-fill"></i>
-            <span>Dashboard</span>
+            <span>Overview</span>
           </a>
         </li>
         <!-- End Dashboard Nav -->
@@ -449,88 +393,90 @@
             </div>
           </div>
         </div>
+
+        <div class="container mt-5">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+              <h4 class="fw-bold">Lecturer Management</h4>
+              <div class="d-flex align-items-center">
+                <div class="search-bar me-3">
+                  <i class="fas fa-search me-2"></i>
+                  <input type="text" id="searchInput" class="form-control me-2 search-input" placeholder="Search">
+                </div>
+                <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="iconic">
+                  <i class="bi bi-plus me-1 bigger-icon"></i> Add Lecturer
+              </button>
+              </div>
+          </div>
+          
+          <div class="table-container">
+              <table class="table table-hover align-middle" id="lecturerTable">
+                  <thead>
+                      <tr>
+                          <th>Full Name</th>
+                          <th>Email Address</th>
+                          <th>Phone Number</th>
+                          <th>No of Assigned Courses</th>
+                          <th>Last Login</th>
+                          <th></th>
+                      </tr>
+                  </thead>
+                  <tbody id="tableBody">
+                      <tr class="mb-5">
+                          <td><img src="assets/img/Avatar.png" class="lecturer-img"> Dr Henry Ohims</td>
+                          <td>Droyim@funai.edu</td>
+                          <td>09067453211</td>
+                          <td>3</td>
+                          <td>2025-01-22 • 2:30pm</td>
+                          <td><i class="bi bi-three-dots-vertical"></i></td>
+                      </tr>
+                      <tr>
+                          <td><img src="assets/img/Avatar.png" class="lecturer-img"> Dr Henry Ohims</td>
+                          <td>Lindak@funai.edu</td>
+                          <td>08123456789</td>
+                          <td>4</td>
+                          <td>2025-01-18 • 1:10pm</td>
+                          <td><i class="bi bi-three-dots-vertical"></i></td>
+                      </tr>
+                      <tr>
+                          <td><img src="assets/img/Avatar.png" class="lecturer-img"> Dr Henry Ohims</td>
+                          <td>johnd@funai.edu</td>
+                          <td>08099887766</td>
+                          <td>2</td>
+                          <td>2025-02-02 • 11:45am</td>
+                          <td><i class="bi bi-three-dots-vertical"></i></td>
+                      </tr>
+                      <tr>
+                          <td><img src="assets/img/Avatar.png" class="lecturer-img"> Dr Henry Ohims</td>
+                          <td>gracea@funai.edu</td>
+                          <td>07034567891</td>
+                          <td>5</td>
+                          <td>2025-01-15 • 4:00pm</td>
+                          <td><i class="bi bi-three-dots-vertical"></i></td>
+                      </tr>
+                      <tr>
+                          <td><img src="assets/img/Avatar.png" class="lecturer-img"> Dr Henry Ohims</td>
+                          <td>samueln@funai.edu</td>
+                          <td>08111223344</td>
+                          <td>3</td>
+                          <td>2025-02-01 • 3:20pm</td>
+                          <td><i class="bi bi-three-dots-vertical"></i></td>
+                      </tr>
+                  </tbody>
+              </table>
+              
+              <div class="d-flex justify-content-between">
+                  <button class="btn btn-light" id="prevPage"><i class="bi bi-arrow-left"></i> Previous</button>
+                  <nav>
+                      <ul class="pagination" id="pagination"></ul>
+                  </nav>
+                  <button class="btn btn-light" id="nextPage">Next <i class="bi bi-arrow-right"></i></button>
+              </div>
+          </div>
+      </div>
       </div>
 
 
-      <div class="container mt-5">
-        <div class="d-flex justify-content-between align-items-center mb-3">
-            <h4 class="fw-bold">Lecturer Management</h4>
-            <div class="d-flex align-items-center">
-              <div class="search-bar me-3">
-                <i class="fas fa-search me-2"></i>
-                <input type="text" id="searchInput" class="form-control me-2 search-input" placeholder="Search">
-              </div>
-              <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="iconic">
-                <i class="bi bi-plus me-1 bigger-icon"></i> Add Lecturer
-            </button>
-            </div>
-        </div>
-        
-        <div class="table-container">
-            <table class="table table-hover align-middle" id="lecturerTable">
-                <thead>
-                    <tr>
-                        <th>Full Name</th>
-                        <th>Email Address</th>
-                        <th>Phone Number</th>
-                        <th>No of Assigned Courses</th>
-                        <th>Last Login</th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody id="tableBody">
-                    <tr class="mb-5">
-                        <td><img src="assets/img/Avatar.png" class="lecturer-img"> Dr Henry Ohims</td>
-                        <td>Droyim@funai.edu</td>
-                        <td>09067453211</td>
-                        <td>3</td>
-                        <td>2025-01-22 • 2:30pm</td>
-                        <td><i class="bi bi-three-dots-vertical"></i></td>
-                    </tr>
-                    <tr>
-                        <td><img src="assets/img/Avatar.png" class="lecturer-img"> Dr Henry Ohims</td>
-                        <td>Lindak@funai.edu</td>
-                        <td>08123456789</td>
-                        <td>4</td>
-                        <td>2025-01-18 • 1:10pm</td>
-                        <td><i class="bi bi-three-dots-vertical"></i></td>
-                    </tr>
-                    <tr>
-                        <td><img src="assets/img/Avatar.png" class="lecturer-img"> Dr Henry Ohims</td>
-                        <td>johnd@funai.edu</td>
-                        <td>08099887766</td>
-                        <td>2</td>
-                        <td>2025-02-02 • 11:45am</td>
-                        <td><i class="bi bi-three-dots-vertical"></i></td>
-                    </tr>
-                    <tr>
-                        <td><img src="assets/img/Avatar.png" class="lecturer-img"> Dr Henry Ohims</td>
-                        <td>gracea@funai.edu</td>
-                        <td>07034567891</td>
-                        <td>5</td>
-                        <td>2025-01-15 • 4:00pm</td>
-                        <td><i class="bi bi-three-dots-vertical"></i></td>
-                    </tr>
-                    <tr>
-                        <td><img src="assets/img/Avatar.png" class="lecturer-img"> Dr Henry Ohims</td>
-                        <td>samueln@funai.edu</td>
-                        <td>08111223344</td>
-                        <td>3</td>
-                        <td>2025-02-01 • 3:20pm</td>
-                        <td><i class="bi bi-three-dots-vertical"></i></td>
-                    </tr>
-                </tbody>
-            </table>
-            
-            <div class="d-flex justify-content-between">
-                <button class="btn btn-light" id="prevPage"><i class="bi bi-arrow-left"></i> Previous</button>
-                <nav>
-                    <ul class="pagination" id="pagination"></ul>
-                </nav>
-                <button class="btn btn-light" id="nextPage">Next <i class="bi bi-arrow-right"></i></button>
-            </div>
-        </div>
-    </div>
+     
 <!-- modal pop up -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">

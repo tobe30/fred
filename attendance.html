@@ -52,6 +52,8 @@
       background: #fff;
       padding: 20px;
       border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      margin-top: 20px;
   }
   .table {
       color: white;
@@ -128,6 +130,24 @@
       font-size: 1.2rem;
       cursor: pointer;
   }
+
+  .search-bar {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    padding: 5px 10px;
+    background-color: white;
+}
+.search-bar input {
+    border: none;
+    outline: none;
+    flex-grow: 1;
+    padding: 5px;
+}
+.search-bar i {
+    color: gray;
+}
 </style>
 
 
@@ -253,68 +273,12 @@
               alt="Profile"
               class="rounded-circle"
             />
-            <span class="d-none d-md-block dropdown-toggle ps-2"
+            <span class="d-none d-md-block ps-2"
               >T. Marizu</span
             > </a
           ><!-- End Profile Iamge Icon -->
 
-          <ul
-            class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile"
-          >
-            <li class="dropdown-header">
-              <h6>Tobe Marizu</h6>
-              <span>Fred Dev</span>
-            </li>
-            <li>
-              <hr class="dropdown-divider" />
-            </li>
-
-            <li>
-              <a
-                class="dropdown-item d-flex align-items-center"
-                href="users-profile.html"
-              >
-                <i class="bi bi-person"></i>
-                <span>My Profile</span>
-              </a>
-            </li>
-            <li>
-              <hr class="dropdown-divider" />
-            </li>
-
-            <li>
-              <a
-                class="dropdown-item d-flex align-items-center"
-                href="users-profile.html"
-              >
-                <i class="bi bi-gear"></i>
-                <span>Account Settings</span>
-              </a>
-            </li>
-            <li>
-              <hr class="dropdown-divider" />
-            </li>
-
-            <li>
-              <a
-                class="dropdown-item d-flex align-items-center"
-                href="pages-faq.html"
-              >
-                <i class="bi bi-question-circle"></i>
-                <span>Need Help?</span>
-              </a>
-            </li>
-            <li>
-              <hr class="dropdown-divider" />
-            </li>
-
-            <li>
-              <a class="dropdown-item d-flex align-items-center" href="#">
-                <i class="bi bi-box-arrow-right"></i>
-                <span>Sign Out</span>
-              </a>
-            </li>
-          </ul>
+          
           <!-- End Profile Dropdown Items -->
         </li>
         <!-- End Profile Nav -->
@@ -495,7 +459,10 @@
       <div class="table-container">
           <!-- Search -->
           <div class="d-flex justify-content-between align-items-center mb-3">
-            <input type="text" id="searchInput" class="form-control bg-grey text-black" style="width: 30%; border: 1px solid #ccc;" placeholder="Search for students, ID, or courses..">
+            <div class="search-bar me-3">
+              <i class="fas fa-search me-2"></i>
+              <input type="text" id="searchInput" class="form-control me-2 search-input" placeholder="Search">
+            </div>
     
     
               <div class="d-flex gap-2">
