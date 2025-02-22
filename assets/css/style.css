@@ -55,7 +55,7 @@ h6 {
 --------------------------------------------------------------*/
 #main {
   margin-top: 60px;
-  padding: 20px 20px;
+  padding: 20px 30px;
   transition: all 0.3s;
 }
 
@@ -701,7 +701,7 @@ h6 {
   top: 60px;
   left: 0;
   bottom: 0;
-  width: 250px;
+  width: 300px;
   z-index: 996;
   transition: all 0.3s;
   padding: 20px;
