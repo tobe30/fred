@@ -359,41 +359,49 @@
     
     <div class="container mt-4">
       <div class="row">
-          <div class="col-md-6 d-flex">
-              <div class="card p-3 w-100 h-100">
-                  <h6>Top 5 Faculty Attendance</h6>
-                  <canvas id="facultyChart"></canvas>
+          <div class="col-md-6 d-flex align-items-stretch">
+              <div class="card w-100">
+                  <div class="card-body">
+                      <h6 class="mt-3">Top 5 Faculty Attendance</h6>
+                      <hr>
+                      <canvas id="facultyChart"></canvas>
+                  </div>
               </div>
           </div>
-          <div class="col-md-6 d-flex">
-              <div class="card p-3 w-100 h-100">
-                  <h6 class="head">Attendance leaderboard (Top 5 Department)</h6>
-                  <div>
-                      <p>1. Med & Surgery <span class="float-end">92%</span></p>
-                      <div class="progress mb-2">
-                          <div class="progress-bar sss" style="width: 92%;"></div>
-                      </div>
-                      <p>2. Law <span class="float-end">89%</span></p>
-                      <div class="progress mb-2">
-                          <div class="progress-bar danger" style="width: 89%;"></div>
-                      </div>
-                      <p>3. Anatomy <span class="float-end">72%</span></p>
-                      <div class="progress mb-2">
-                          <div class="progress-bar orange" style="width: 72%;"></div>
-                      </div>
-                      <p>4. Computer Sci <span class="float-end">61%</span></p>
-                      <div class="progress mb-2">
-                          <div class="progress-bar bg-primary" style="width: 61%;"></div>
-                      </div>
-                      <p>5. Mass Com <span class="float-end">55%</span></p>
-                      <div class="progress mb-2">
-                          <div class="progress-bar bg-secondary" style="width: 55%;"></div>
+          <div class="col-md-6 d-flex align-items-stretch">
+              <div class="card w-100">
+                  <div class="card-body">
+                      <h6 class="head mb-4 mt-3">Attendance Leaderboard (Top 5 Departments)</h6>
+                      <hr>
+                      <div>
+                          <p>1. Med & Surgery <span class="float-end">92%</span></p>
+                          <div class="progress mb-2">
+                              <div class="progress-bar bg-success" style="width: 92%;"></div>
+                          </div>
+                          <p>2. Law <span class="float-end">89%</span></p>
+                          <div class="progress mb-2">
+                              <div class="progress-bar bg-danger" style="width: 89%;"></div>
+                          </div>
+                          <p>3. Anatomy <span class="float-end">72%</span></p>
+                          <div class="progress mb-2">
+                              <div class="progress-bar bg-warning" style="width: 72%;"></div>
+                          </div>
+                          <p>4. Computer Sci <span class="float-end">61%</span></p>
+                          <div class="progress mb-2">
+                              <div class="progress-bar bg-primary" style="width: 61%;"></div>
+                          </div>
+                          <p>5. Mass Com <span class="float-end">55%</span></p>
+                          <div class="progress mb-2">
+                              <div class="progress-bar bg-secondary" style="width: 55%;"></div>
+                          </div>
                       </div>
                   </div>
               </div>
           </div>
       </div>
-    </div>
+  </div>
+  
+  
   </div>
   
   
@@ -431,7 +439,7 @@
     new Chart(ctx, {
         type: 'doughnut',
         data: {
-            labels: ['Basic Medical Sci.', 'Law Faculty', 'Education Faculty', 'Physical Science', 'Life Sciences'],
+            labels: ['Basic Medical Sci.  80%', 'Law Faculty  69%', 'Education Faculty  50%', 'Physical Science  45%', 'Life Sciences  40%'],
             datasets: [{
                 data: [80, 69, 50, 45, 40],
                 backgroundColor: ['#343a40', '#007bff', '#28a745', '#fd7e14', '#dc3545']
@@ -456,8 +464,8 @@
         data: {
             labels: ['Mondays', 'Tuesdays', 'Wednesday', 'Thursdays', 'Fridays'],
             datasets: [{
-                label: 'Attendance',
-                data: [30, 50, 40, 70, 50],
+                label: 'Attendance (%)',
+                data: [100, 80, 60, 40, 20], // Updated values in percentage
                 backgroundColor: 'rgba(0, 128, 0, 0.2)',
                 borderColor: 'rgba(0, 128, 0, 1)',
                 borderWidth: 2,
@@ -466,9 +474,22 @@
         },
         options: {
             responsive: true,
-            maintainAspectRatio: false
+            maintainAspectRatio: false,
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    max: 100, // Setting the y-axis max to 100%
+                    ticks: {
+                        stepSize: 20, // Increment of 20% on the y-axis
+                        callback: function(value) {
+                            return value + '%'; // Display percentage on y-axis
+                        }
+                    }
+                }
+            }
         }
     });
+    
 
     // Sample data for each level
 const attendanceData = {

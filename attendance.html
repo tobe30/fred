@@ -429,27 +429,28 @@
                 </div>
             </div>
             <div class="col-md-6 d-flex">
-                <div class="card p-3 w-100 h-100">
-                    <h5 style="color:#000;">Attendance by Dept</h5>
-                    <select class="form-select w-50 mb-3">
-                        <option selected>Computer Sc.</option>
-                        <option selected>Computer Sc.</option>
-                        <option>Biological Science</option>
-                        <option>Economy</option>
-                        <option>English</option>
-                        <option>Law</option>
-                    </select>
-                    <div class="dept-labels">
-                      <span class="level-btn" style="cursor: pointer;" data-level="100L">100L</span>
-                      <span class="level-btn" style="cursor: pointer;" data-level="200L">200L</span>
-                      <span class="level-btn" style="cursor: pointer;" data-level="300L">300L</span>
-                      <span class="level-btn" style="cursor: pointer;" data-level="400L">400L</span>
-                    </div>
-                    <div class="chart-container">
-                        <canvas id="barChart"></canvas>
-                    </div>
-                </div>
-            </div>
+              <div class="card p-3 w-100 h-100">
+                  <div class="d-flex justify-content-between align-items-center">
+                      <h5 style="color:#000; margin-bottom: 0;">Attendance by Dept</h5>
+                      <select class="form-select w-auto">
+                          <option selected>Computer Sc.</option>
+                          <option>Biological Science</option>
+                          <option>Economy</option>
+                          <option>English</option>
+                          <option>Law</option>
+                      </select>
+                  </div>
+                  <div class="dept-labels mt-3">
+                    <span class="level-btn" style="cursor: pointer;" data-level="100L">100L</span>
+                    <span class="level-btn" style="cursor: pointer;" data-level="200L">200L</span>
+                    <span class="level-btn" style="cursor: pointer;" data-level="300L">300L</span>
+                    <span class="level-btn" style="cursor: pointer;" data-level="400L">400L</span>
+                  </div>
+                  <div class="chart-container">
+                      <canvas id="barChart"></canvas>
+                  </div>
+              </div>
+          </div>
         </div>
     </div>
     
@@ -780,44 +781,45 @@
 
     // Bar Chart
     // Sample data for each level
-const attendanceData = {
-  "100L": [90, 75, 85, 40, 50],
-  "200L": [80, 60, 70, 50, 40],
-  "300L": [95, 85, 80, 70, 65],
-  "400L": [60, 50, 40, 30, 20]
-};
-
-// Get the bar chart canvas
-const barCtx = document.getElementById('barChart').getContext('2d');
-
-// Create the initial bar chart
-let barChart = new Chart(barCtx, {
-  type: 'bar',
-  data: {
-      labels: ['Mon', 'Tue', 'Wed', 'Thur', 'Fri'],
-      datasets: [{
-          label: 'Percentage',
-          data: attendanceData["100L"], // Default data
-          backgroundColor: '#24AA4E',
-          borderRadius: 10,
-      }]
-  },
-  options: {
-      responsive: true,
-      maintainAspectRatio: false
-  }
-});
-
-// Add event listeners to each level button
-document.querySelectorAll('.level-btn').forEach(button => {
-  button.addEventListener('click', function() {
-      const level = this.getAttribute('data-level'); // Get the clicked level
-
-      // Update the chart data
-      barChart.data.datasets[0].data = attendanceData[level];
-      barChart.update();
-  });
-});
+    const attendanceData = {
+      "100L": [90, 75, 85, 40, 50],
+      "200L": [80, 60, 70, 50, 40],
+      "300L": [95, 85, 80, 70, 65],
+      "400L": [60, 50, 40, 30, 20]
+    };
+    
+    // Get the bar chart canvas
+    const barCtx = document.getElementById('barChart').getContext('2d');
+    
+    // Create the initial bar chart
+    let barChart = new Chart(barCtx, {
+      type: 'bar',
+      data: {
+          labels: ['Mon', 'Tue', 'Wed', 'Thur', 'Fri'],
+          datasets: [{
+              label: 'Percentage',
+              data: attendanceData["100L"], // Default data
+              backgroundColor: '#24AA4E',
+              borderRadius: 10,
+          }]
+      },
+      options: {
+          responsive: true,
+          maintainAspectRatio: false
+      }
+    });
+    
+    // Add event listeners to each level button
+    document.querySelectorAll('.level-btn').forEach(button => {
+      button.addEventListener('click', function() {
+          const level = this.getAttribute('data-level'); // Get the clicked level
+    
+          // Update the chart data
+          barChart.data.datasets[0].data = attendanceData[level];
+          barChart.update();
+      });
+    });
+    
 </script>
   <!-- Vendor JS Files -->
   <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
