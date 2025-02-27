@@ -66,8 +66,9 @@
       background: #fff;
       color: #000;
   }
-  .table tbody td{
+  .table tbody td a{
     color: #737373;
+    
   }
   .table tbody tr:hover {
       background: #f1f1f1;
@@ -147,6 +148,13 @@
 }
 .search-bar i {
     color: gray;
+}
+
+.active-level {
+  background-color: #24AA4E;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
 }
 </style>
 
@@ -323,7 +331,7 @@
       <!-- End Department Page Nav -->
 
       <li class="nav-items">
-        <a class="nav-links collapsed" href="">
+        <a class="nav-links collapsed" href="register.html">
           <i class="bi bi-box-arrow-right"></i>
           <span>logout</span>
         </a>
@@ -417,40 +425,42 @@
 
       <div class="container mt-4">
         <div class="row">
-            <div class="col-md-6 d-flex">
-                <div class="card p-3 w-100 h-100">
-                    <div class="d-flex justify-content-between align-items-center">
-                        <h5 style="color:#000;">Attendance Key Trend</h5>
-                        <button class="btn btn-light border">📅 13th Jan, 2025</button>
-                    </div>
-                    <div class="chart-container">
-                        <canvas id="lineChart"></canvas>
-                    </div>
+          <div class="col-md-6 d-flex">
+            <div class="card p-3 w-100 h-100">
+                <div class="d-flex justify-content-between align-items-center">
+                    <h5 style="color:#000;">Attendance Key Trend</h5>
+                    <button class="btn btn-light border">📅 13th Jan, 2025</button>
+                </div>
+                <div class="chart-container">
+                    <canvas id="lineChart"></canvas>
                 </div>
             </div>
-            <div class="col-md-6 d-flex">
-              <div class="card p-3 w-100 h-100">
-                  <div class="d-flex justify-content-between align-items-center">
-                      <h5 style="color:#000; margin-bottom: 0;">Attendance by Dept</h5>
-                      <select class="form-select w-auto">
-                          <option selected>Computer Sc.</option>
-                          <option>Biological Science</option>
-                          <option>Economy</option>
-                          <option>English</option>
-                          <option>Law</option>
-                      </select>
-                  </div>
-                  <div class="dept-labels mt-3">
-                    <span class="level-btn" style="cursor: pointer;" data-level="100L">100L</span>
-                    <span class="level-btn" style="cursor: pointer;" data-level="200L">200L</span>
-                    <span class="level-btn" style="cursor: pointer;" data-level="300L">300L</span>
-                    <span class="level-btn" style="cursor: pointer;" data-level="400L">400L</span>
-                  </div>
-                  <div class="chart-container">
-                      <canvas id="barChart"></canvas>
-                  </div>
+        </div>
+        <div class="col-md-6 d-flex">
+          <div class="card p-3 w-100 h-100">
+              <div class="d-flex justify-content-between align-items-center">
+                  <h5 style="color:#000; margin-bottom: 0;">Attendance by Dept</h5>
+                  <select class="form-select w-auto">
+                      <option selected>Computer Sc.</option>
+                      <option>Biological Science</option>
+                      <option>Economy</option>
+                      <option>English</option>
+                      <option>Law</option>
+                  </select>
+              </div>
+              <div class="dept-labels mt-3">
+                <span class="level-btn" style="cursor: pointer;" data-level="100L">100L</span>
+                <span class="level-btn" style="cursor: pointer;" data-level="200L">200L</span>
+                <span class="level-btn" style="cursor: pointer;" data-level="300L">300L</span>
+                <span class="level-btn" style="cursor: pointer;" data-level="400L">400L</span>
+              </div>
+              <div class="chart-container">
+                  <canvas id="barChart"></canvas>
               </div>
           </div>
+      </div>
+      
+        
         </div>
     </div>
     
@@ -491,9 +501,11 @@
                     <tr>
                       <td class="d-flex align-items-center gap-2">
                         <img src="assets/img/Avatar.png" class="profile-img">
+                        <a href="view-student.html">
                         <div class="text-container">
                             <span class="fw-bold">Ezekiel Olayiwola</span> 
                             <small class="text-muted d-block">ezekiel@example.com</small>
+                          </a>
                         </div>
                     </td>
                         <td>2020/SC/162234</td>
@@ -505,7 +517,7 @@
                                     <i class="bi bi-three-dots fs-5"></i>
                                 </button>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#"><i class="bi bi-person"></i> View Details</a></li>
+                                    <li><a class="dropdown-item" href="view-student.html"><i class="bi bi-person"></i> View Details</a></li>
                                     <li><a class="dropdown-item" href="#"><i class="bi bi-send"></i> Send Reminders</a></li>
                                     <li><a class="dropdown-item" href="#"><i class="bi bi-download"></i> Export</a></li>
                                 </ul>
@@ -515,10 +527,11 @@
                     <tr>
                       <td class="d-flex align-items-center gap-2">
                         <img src="assets/img/Avatar.png" class="profile-img">
-                        <div class="text-container">
-                            <span class="fw-bold">Ezekiel Olayiwola</span> 
-                            <small class="text-muted d-block">ezekiel@example.com</small>
-                        </div>
+                        <a href="view-student.html">
+                          <div class="text-container">
+                              <span class="fw-bold">Ezekiel Olayiwola</span> 
+                              <small class="text-muted d-block">ezekiel@example.com</small>
+                            </a>
                     </td>
                         <td>2020/SC/162235</td>
                         <td><div class="progress"><div class="progress-bar" style="width: 80%;"></div></div> 80%</td>
@@ -529,7 +542,7 @@
                                     <i class="bi bi-three-dots fs-5"></i>
                                 </button>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#"><i class="bi bi-person"></i> View Details</a></li>
+                                    <li><a class="dropdown-item" href="view-student.html"><i class="bi bi-person"></i> View Details</a></li>
                                     <li><a class="dropdown-item" href="#"><i class="bi bi-send"></i> Send Reminders</a></li>
                                     <li><a class="dropdown-item" href="#"><i class="bi bi-download"></i> Export</a></li>
                                 </ul>
@@ -539,10 +552,11 @@
                     <tr>
                       <td class="d-flex align-items-center gap-2">
                         <img src="assets/img/Avatar.png" class="profile-img">
-                        <div class="text-container">
-                            <span class="fw-bold">Ezekiel Olayiwola</span> 
-                            <small class="text-muted d-block">ezekiel@example.com</small>
-                        </div>
+                        <a href="view-student.html">
+                          <div class="text-container">
+                              <span class="fw-bold">Ezekiel Olayiwola</span> 
+                              <small class="text-muted d-block">ezekiel@example.com</small>
+                            </a>
                     </td>
                         <td>2020/SC/162235</td>
                         <td><div class="progress"><div class="progress-bar" style="width: 80%;"></div></div> 80%</td>
@@ -553,7 +567,7 @@
                                     <i class="bi bi-three-dots fs-5"></i>
                                 </button>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#"><i class="bi bi-person"></i> View Details</a></li>
+                                    <li><a class="dropdown-item" href="view-student.html"><i class="bi bi-person"></i> View Details</a></li>
                                     <li><a class="dropdown-item" href="#"><i class="bi bi-send"></i> Send Reminders</a></li>
                                     <li><a class="dropdown-item" href="#"><i class="bi bi-download"></i> Export</a></li>
                                 </ul>
@@ -563,10 +577,11 @@
                     <tr>
                       <td class="d-flex align-items-center gap-2">
                         <img src="assets/img/Avatar.png" class="profile-img">
-                        <div class="text-container">
-                            <span class="fw-bold">Ezekiel Olayiwola</span> 
-                            <small class="text-muted d-block">ezekiel@example.com</small>
-                        </div>
+                        <a href="view-student.html">
+                          <div class="text-container">
+                              <span class="fw-bold">Ezekiel Olayiwola</span> 
+                              <small class="text-muted d-block">ezekiel@example.com</small>
+                            </a>
                     </td>
                         <td>2020/SC/162235</td>
                         <td><div class="progress"><div class="progress-bar" style="width: 80%;"></div></div> 80%</td>
@@ -577,7 +592,7 @@
                                     <i class="bi bi-three-dots fs-5"></i>
                                 </button>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#"><i class="bi bi-person"></i> View Details</a></li>
+                                    <li><a class="dropdown-item" href="view-student.html"><i class="bi bi-person"></i> View Details</a></li>
                                     <li><a class="dropdown-item" href="#"><i class="bi bi-send"></i> Send Reminders</a></li>
                                     <li><a class="dropdown-item" href="#"><i class="bi bi-download"></i> Export</a></li>
                                 </ul>
@@ -587,10 +602,11 @@
                     <tr>
                       <td class="d-flex align-items-center gap-2">
                         <img src="assets/img/Avatar.png" class="profile-img">
-                        <div class="text-container">
-                            <span class="fw-bold">Ezekiel Olayiwola</span> 
-                            <small class="text-muted d-block">ezekiel@example.com</small>
-                        </div>
+                        <a href="view-student.html">
+                          <div class="text-container">
+                              <span class="fw-bold">Ezekiel Olayiwola</span> 
+                              <small class="text-muted d-block">ezekiel@example.com</small>
+                            </a>
                     </td>
                         <td>2020/SC/162235</td>
                         <td><div class="progress"><div class="progress-bar" style="width: 80%;"></div></div> 80%</td>
@@ -601,7 +617,7 @@
                                     <i class="bi bi-three-dots fs-5"></i>
                                 </button>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#"><i class="bi bi-person"></i> View Details</a></li>
+                                    <li><a class="dropdown-item" href="view-student.html"><i class="bi bi-person"></i> View Details</a></li>
                                     <li><a class="dropdown-item" href="#"><i class="bi bi-send"></i> Send Reminders</a></li>
                                     <li><a class="dropdown-item" href="#"><i class="bi bi-download"></i> Export</a></li>
                                 </ul>
@@ -757,69 +773,126 @@
     });
 </script>
 
-  <script>
-    // Line Chart
-    const lineCtx = document.getElementById('lineChart').getContext('2d');
-    new Chart(lineCtx, {
-        type: 'line',
-        data: {
-            labels: ['Mondays', 'Tuesdays', 'Wednesday', 'Thursdays', 'Fridays'],
-            datasets: [{
-                label: 'Attendance',
-                data: [30, 50, 40, 70, 50],
-                backgroundColor: 'rgba(0, 128, 0, 0.2)',
-                borderColor: 'rgba(0, 128, 0, 1)',
-                borderWidth: 2,
-                fill: true,
-            }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false
-        }
-    });
-
-    // Bar Chart
-    // Sample data for each level
-    const attendanceData = {
-      "100L": [90, 75, 85, 40, 50],
-      "200L": [80, 60, 70, 50, 40],
-      "300L": [95, 85, 80, 70, 65],
-      "400L": [60, 50, 40, 30, 20]
-    };
-    
-    // Get the bar chart canvas
-    const barCtx = document.getElementById('barChart').getContext('2d');
-    
-    // Create the initial bar chart
-    let barChart = new Chart(barCtx, {
-      type: 'bar',
+<script>
+  // Updated Line Chart Data
+  const lineCtx = document.getElementById('lineChart').getContext('2d');
+  new Chart(lineCtx, {
+      type: 'line',
       data: {
           labels: ['Mon', 'Tue', 'Wed', 'Thur', 'Fri'],
           datasets: [{
-              label: 'Percentage',
-              data: attendanceData["100L"], // Default data
-              backgroundColor: '#24AA4E',
-              borderRadius: 10,
+              label: 'Attendance (%)',
+              data: [90, 70, 80, 40, 50], // Attendance values
+              backgroundColor: 'rgba(0, 128, 0, 0.2)',
+              borderColor: 'rgba(0, 128, 0, 1)',
+              borderWidth: 2,
+              fill: true,
+              pointBackgroundColor: 'rgba(0, 128, 0, 1)',
+              pointBorderColor: '#fff',
+              pointRadius: 5,
+              pointHoverRadius: 7,
           }]
       },
       options: {
           responsive: true,
-          maintainAspectRatio: false
+          maintainAspectRatio: false,
+          scales: {
+              y: {
+                  beginAtZero: true,
+                  max: 100,
+                  ticks: {
+                      stepSize: 20,
+                      callback: function(value) {
+                          return value + '%'; // Display percentage
+                      }
+                  }
+              }
+          },
+          plugins: {
+              tooltip: {
+                  callbacks: {
+                      label: function(context) {
+                          let value = context.raw;
+                          return value + '%'; // Show percentage in tooltip
+                      }
+                  }
+              }
+          }
       }
+  });
+  
+// Expanded attendance data to include up to 600L
+const attendanceData = {
+  "100L": [90, 70, 80, 40, 50],
+  "200L": [85, 75, 78, 50, 60],
+  "300L": [80, 65, 72, 55, 45],
+  "400L": [75, 60, 70, 50, 40],
+  "500L": [70, 55, 65, 45, 35],
+  "600L": [65, 50, 60, 40, 30]
+};
+
+const barCtx = document.getElementById('barChart').getContext('2d');
+let barChart = new Chart(barCtx, {
+  type: 'bar',
+  data: {
+      labels: ['Mon', 'Tue', 'Wed', 'Thur', 'Fri'],
+      datasets: [{
+          label: 'Percentage',
+          data: attendanceData["100L"],
+          backgroundColor: '#24AA4E',
+          borderRadius: 10,
+      }]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    scales: {
+        y: {
+            beginAtZero: true,
+            max: 100, // Ensures the max is 100%
+            ticks: {
+                stepSize: 20, // Space at intervals of 20
+                callback: function(value) {
+                    return value + '%'; // Convert numbers to percentages
+                }
+            }
+        }
+    }
+  }
+});
+
+// Generate level buttons dynamically
+// Generate level buttons dynamically
+const levels = ["100L", "200L", "300L", "400L", "500L", "600L"];
+const levelContainer = document.querySelector('.dept-labels');
+levelContainer.innerHTML = "";
+
+levels.forEach(level => {
+    let span = document.createElement('span');
+    span.className = 'level-btn';
+    span.style.cursor = 'pointer';
+    span.setAttribute('data-level', level);
+    span.innerText = level;
+
+    // Click event to update chart and highlight active level
+    span.addEventListener('click', function() {
+        // Update bar chart data
+        barChart.data.datasets[0].data = attendanceData[level];
+        barChart.update();
+
+        // Remove 'active' class from all buttons
+        document.querySelectorAll('.level-btn').forEach(btn => btn.classList.remove('active-level'));
+
+        // Add 'active' class to the clicked button
+        this.classList.add('active-level');
     });
-    
-    // Add event listeners to each level button
-    document.querySelectorAll('.level-btn').forEach(button => {
-      button.addEventListener('click', function() {
-          const level = this.getAttribute('data-level'); // Get the clicked level
-    
-          // Update the chart data
-          barChart.data.datasets[0].data = attendanceData[level];
-          barChart.update();
-      });
-    });
-    
+
+    levelContainer.appendChild(span);
+});
+
+// Set default active level
+document.querySelector('.level-btn[data-level="100L"]').classList.add('active-level');
+
 </script>
   <!-- Vendor JS Files -->
   <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>

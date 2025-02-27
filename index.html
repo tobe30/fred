@@ -47,6 +47,94 @@
         padding: 0 10px;
         font-weight: bold;
     }
+
+    .card {
+      border-radius: 12px;
+      padding: 15px;
+      height: auto;
+  }
+  .progress {
+      height: 8px;
+      border-radius: 10px;
+  }
+  #facultyChart {
+      max-height: 250px;
+  }
+  .attendance-label {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 500;
+  }
+  .rank {
+      width: 30px;
+      height: 30px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: #f0f0f0;
+      border-radius: 10%;
+      font-size: 14px;
+      font-weight: bold;
+  }
+  hr {
+      margin-top: 5px;
+      margin-bottom: 20px;
+      border: 0;
+      border-top: 1px solid #ccc;
+  }
+  .progress-bar {
+      border-radius: 5px;
+  }
+
+  #facultyChart {
+    max-height: 250px;
+}
+
+#legend-container {
+  display: flex;
+  flex-direction: column;
+  gap: 6px; /* Adjust spacing between legend items */
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0 10px;
+
+}
+
+.legend-color {
+  width: 14px;
+  height: 14px;
+  border-radius: 2px;
+  margin-right: 6px;
+}
+
+.legend-text {
+  flex: 1; /* Allows text to take up remaining space */
+  font-size: 10px;
+  font-weight: 500;
+  text-align: left; /* Ensures left alignment */
+}
+
+.legend-percentage {
+  font-size: 12px;
+  font-weight: 500;
+  text-align: right; /* Ensures percentage aligns properly */
+  min-width: 35px; /* Adjust this to keep it straight */
+}
+.active-level {
+  background-color: #24AA4E;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+
+
 </style>
 
 
@@ -222,7 +310,7 @@
       <!-- End Department Page Nav -->
 
       <li class="nav-items">
-        <a class="nav-links collapsed" href="">
+        <a class="nav-links collapsed" href="register.html">
           <i class="bi bi-box-arrow-right"></i>
           <span>logout</span>
         </a>
@@ -359,41 +447,70 @@
     
     <div class="container mt-4">
       <div class="row">
-          <div class="col-md-6 d-flex align-items-stretch">
-              <div class="card w-100">
-                  <div class="card-body">
-                      <h6 class="mt-3">Top 5 Faculty Attendance</h6>
-                      <hr>
-                      <canvas id="facultyChart"></canvas>
-                  </div>
+        <div class="col-md-6">
+          <div class="card shadow-sm p-3">
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                  <h6>Top 5 Faculty Attendance</h6>
+                  <i class="fas fa-filter rank" style="color: #8B8C8C;"></i>
+              </div>
+              <hr>
+              <div class="d-flex align-items-center">
+                  <!-- Chart Canvas -->
+                  <canvas id="facultyChart" style="flex: 1; max-width: 70%; margin-bottom: 10px;"></canvas>
+                  
+                  <!-- Legend beside the chart -->
+                  <div id="legend-container" class="ms-3 mb-5" style="flex: 1;"></div>
               </div>
           </div>
-          <div class="col-md-6 d-flex align-items-stretch">
-              <div class="card w-100">
-                  <div class="card-body">
-                      <h6 class="head mb-4 mt-3">Attendance Leaderboard (Top 5 Departments)</h6>
-                      <hr>
-                      <div>
-                          <p>1. Med & Surgery <span class="float-end">92%</span></p>
-                          <div class="progress mb-2">
-                              <div class="progress-bar bg-success" style="width: 92%;"></div>
-                          </div>
-                          <p>2. Law <span class="float-end">89%</span></p>
-                          <div class="progress mb-2">
-                              <div class="progress-bar bg-danger" style="width: 89%;"></div>
-                          </div>
-                          <p>3. Anatomy <span class="float-end">72%</span></p>
-                          <div class="progress mb-2">
-                              <div class="progress-bar bg-warning" style="width: 72%;"></div>
-                          </div>
-                          <p>4. Computer Sci <span class="float-end">61%</span></p>
-                          <div class="progress mb-2">
-                              <div class="progress-bar bg-primary" style="width: 61%;"></div>
-                          </div>
-                          <p>5. Mass Com <span class="float-end">55%</span></p>
-                          <div class="progress mb-2">
-                              <div class="progress-bar bg-secondary" style="width: 55%;"></div>
-                          </div>
+      </div>
+      
+          <div class="col-md-6">
+              <div class="card shadow-sm">
+                  <div class="d-flex justify-content-between align-items-center mb-3">
+                      <h6>Attendance leaderboard (Top 5 Department)</h6>
+                      <i class="fas fa-filter rank" style="color: #8B8C8C;"></i>
+                  </div>
+                  <hr>
+                  <div>
+                      <div class="d-flex align-items-center mb-2">
+                          <span class="rank">1</span>
+                          <span class="flex-grow-1 ms-2">Med & Surgery</span>
+                          <span>92%</span>
+                      </div>
+                      <div class="progress bg-light">
+                          <div class="progress-bar" style="width: 92%; background-color: #28a745;"></div>
+                      </div>
+                      <div class="d-flex align-items-center mb-2 mt-2">
+                          <span class="rank">2</span>
+                          <span class="flex-grow-1 ms-2">Law</span>
+                          <span>89%</span>
+                      </div>
+                      <div class="progress bg-light">
+                          <div class="progress-bar" style="width: 89%; background-color: #d63384;"></div>
+                      </div>
+                      <div class="d-flex align-items-center mb-2 mt-2">
+                          <span class="rank">3</span>
+                          <span class="flex-grow-1 ms-2">Anatomy</span>
+                          <span>72%</span>
+                      </div>
+                      <div class="progress bg-light">
+                          <div class="progress-bar" style="width: 72%; background-color: #fd7e14;"></div>
+                      </div>
+                      <div class="d-flex align-items-center mb-2 mt-2">
+                          <span class="rank">4</span>
+                          <span class="flex-grow-1 ms-2">Computer Sci</span>
+                          <span>61%</span>
+                      </div>
+                      <div class="progress bg-light">
+                          <div class="progress-bar" style="width: 61%; background-color: #0d6efd;"></div>
+                      </div>
+                      <div class="d-flex align-items-center mb-2 mt-2">
+                          <span class="rank">5</span>
+                          <span class="flex-grow-1 ms-2">Mass Com</span>
+                          <span>55%</span>
+                      </div>
+                      <div class="progress bg-light">
+                          <div class="progress-bar" style="width: 55%; background-color: #6c757d;"></div>
                       </div>
                   </div>
               </div>
@@ -436,100 +553,183 @@
   <!-- graph -->
   <script>
     const ctx = document.getElementById('facultyChart').getContext('2d');
+
+    const facultyData = {
+        labels: ['Basic Medical Sci.', 'Law Faculty', 'Education Faculty', 'Physical Science', 'Life Sciences'],
+        datasets: [{
+            data: [80, 69, 50, 45, 40],
+            backgroundColor: ['#343a40', '#0d6efd', '#198754', '#fd7e14', '#dc3545'],
+            borderWidth: 1,
+        }]
+    };
+    
     new Chart(ctx, {
         type: 'doughnut',
-        data: {
-            labels: ['Basic Medical Sci.  80%', 'Law Faculty  69%', 'Education Faculty  50%', 'Physical Science  45%', 'Life Sciences  40%'],
-            datasets: [{
-                data: [80, 69, 50, 45, 40],
-                backgroundColor: ['#343a40', '#007bff', '#28a745', '#fd7e14', '#dc3545']
-            }]
-        },
+        data: facultyData,
         options: {
             responsive: true,
             plugins: {
                 legend: {
-                    position: 'right',
-                }
-            }
-        }
-    });
-</script>
-
-  <script>
-    // Line Chart
-    const lineCtx = document.getElementById('lineChart').getContext('2d');
-    new Chart(lineCtx, {
-        type: 'line',
-        data: {
-            labels: ['Mondays', 'Tuesdays', 'Wednesday', 'Thursdays', 'Fridays'],
-            datasets: [{
-                label: 'Attendance (%)',
-                data: [100, 80, 60, 40, 20], // Updated values in percentage
-                backgroundColor: 'rgba(0, 128, 0, 0.2)',
-                borderColor: 'rgba(0, 128, 0, 1)',
-                borderWidth: 2,
-                fill: true,
-            }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            scales: {
-                y: {
-                    beginAtZero: true,
-                    max: 100, // Setting the y-axis max to 100%
-                    ticks: {
-                        stepSize: 20, // Increment of 20% on the y-axis
-                        callback: function(value) {
-                            return value + '%'; // Display percentage on y-axis
-                        }
-                    }
+                    display: false,  // Hide default legend
                 }
             }
         }
     });
     
+    // Custom legend beside the chart
+    const legendContainer = document.getElementById("legend-container");
+legendContainer.innerHTML = ""; // Clear previous legends
 
-    // Sample data for each level
+facultyData.labels.forEach((label, index) => {
+    const color = facultyData.datasets[0].backgroundColor[index];
+    const percentage = facultyData.datasets[0].data[index] + "%";
+
+    let legendItem = document.createElement("div");
+    legendItem.classList.add("legend-item");
+
+    let colorBox = document.createElement("span");
+    colorBox.classList.add("legend-color");
+    colorBox.style.backgroundColor = color;
+
+    let text = document.createElement("span");
+    text.classList.add("legend-text");
+    text.innerText = label;
+
+    let percentageText = document.createElement("span");
+    percentageText.classList.add("legend-percentage");
+    percentageText.innerText = percentage;
+
+    legendItem.appendChild(colorBox);
+    legendItem.appendChild(text);
+    legendItem.appendChild(percentageText);
+
+    legendContainer.appendChild(legendItem);
+});
+
+
+    
+</script>
+
+
+<script>
+  // Updated Line Chart Data
+  const lineCtx = document.getElementById('lineChart').getContext('2d');
+  new Chart(lineCtx, {
+      type: 'line',
+      data: {
+          labels: ['Mon', 'Tue', 'Wed', 'Thur', 'Fri'],
+          datasets: [{
+              label: 'Attendance (%)',
+              data: [90, 70, 80, 40, 50], // Attendance values
+              backgroundColor: 'rgba(0, 128, 0, 0.2)',
+              borderColor: 'rgba(0, 128, 0, 1)',
+              borderWidth: 2,
+              fill: true,
+              pointBackgroundColor: 'rgba(0, 128, 0, 1)',
+              pointBorderColor: '#fff',
+              pointRadius: 5,
+              pointHoverRadius: 7,
+          }]
+      },
+      options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          scales: {
+              y: {
+                  beginAtZero: true,
+                  max: 100,
+                  ticks: {
+                      stepSize: 20,
+                      callback: function(value) {
+                          return value + '%'; // Display percentage
+                      }
+                  }
+              }
+          },
+          plugins: {
+              tooltip: {
+                  callbacks: {
+                      label: function(context) {
+                          let value = context.raw;
+                          return value + '%'; // Show percentage in tooltip
+                      }
+                  }
+              }
+          }
+      }
+  });
+  
+// Expanded attendance data to include up to 600L
 const attendanceData = {
-  "100L": [90, 75, 85, 40, 50],
-  "200L": [80, 60, 70, 50, 40],
-  "300L": [95, 85, 80, 70, 65],
-  "400L": [60, 50, 40, 30, 20]
+  "100L": [90, 70, 80, 40, 50],
+  "200L": [85, 75, 78, 50, 60],
+  "300L": [80, 65, 72, 55, 45],
+  "400L": [75, 60, 70, 50, 40],
+  "500L": [70, 55, 65, 45, 35],
+  "600L": [65, 50, 60, 40, 30]
 };
 
-// Get the bar chart canvas
 const barCtx = document.getElementById('barChart').getContext('2d');
-
-// Create the initial bar chart
 let barChart = new Chart(barCtx, {
   type: 'bar',
   data: {
       labels: ['Mon', 'Tue', 'Wed', 'Thur', 'Fri'],
       datasets: [{
           label: 'Percentage',
-          data: attendanceData["100L"], // Default data
+          data: attendanceData["100L"],
           backgroundColor: '#24AA4E',
           borderRadius: 10,
       }]
   },
   options: {
-      responsive: true,
-      maintainAspectRatio: false
+    responsive: true,
+    maintainAspectRatio: false,
+    scales: {
+        y: {
+            beginAtZero: true,
+            max: 100, // Ensures the max is 100%
+            ticks: {
+                stepSize: 20, // Space at intervals of 20
+                callback: function(value) {
+                    return value + '%'; // Convert numbers to percentages
+                }
+            }
+        }
+    }
   }
 });
 
-// Add event listeners to each level button
-document.querySelectorAll('.level-btn').forEach(button => {
-  button.addEventListener('click', function() {
-      const level = this.getAttribute('data-level'); // Get the clicked level
+// Generate level buttons dynamically
+// Generate level buttons dynamically
+const levels = ["100L", "200L", "300L", "400L", "500L", "600L"];
+const levelContainer = document.querySelector('.dept-labels');
+levelContainer.innerHTML = "";
 
-      // Update the chart data
-      barChart.data.datasets[0].data = attendanceData[level];
-      barChart.update();
-  });
+levels.forEach(level => {
+    let span = document.createElement('span');
+    span.className = 'level-btn';
+    span.style.cursor = 'pointer';
+    span.setAttribute('data-level', level);
+    span.innerText = level;
+
+    // Click event to update chart and highlight active level
+    span.addEventListener('click', function() {
+        // Update bar chart data
+        barChart.data.datasets[0].data = attendanceData[level];
+        barChart.update();
+
+        // Remove 'active' class from all buttons
+        document.querySelectorAll('.level-btn').forEach(btn => btn.classList.remove('active-level'));
+
+        // Add 'active' class to the clicked button
+        this.classList.add('active-level');
+    });
+
+    levelContainer.appendChild(span);
 });
+
+// Set default active level
+document.querySelector('.level-btn[data-level="100L"]').classList.add('active-level');
 
 </script>
   <!-- Vendor JS Files -->

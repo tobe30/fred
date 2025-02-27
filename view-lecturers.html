@@ -39,11 +39,11 @@
         background: #f8f9fa;
     }
     .profile-card {
-        background: white;
-        border-radius: 10px;
-        padding: 20px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
     .student-img {
         width: 70px;
         height: 70px;
@@ -77,10 +77,10 @@
     }
     
     /* Unique Background & Text Colors */
-    .attendance-total i { background: #E6F4EA; color: #18794E; }
-    .attendance-late i { background: #FFF4E5; color: #DC6803; }
-    .attendance-undertime i { background: #FFE5E5; color: #FF5A60; }
-    .attendance-absent i { background: #E0EAFF; color: #1570EF; }
+    .attendance-total i { background: #E6F4EA; color: #24AA4E; }
+    .attendance-late i { background: #FFF4E5; color: #FF8A05; }
+    .attendance-undertime i { background: #FFE5E5; color: #E04FAB; }
+    .attendance-absent i { background: #E0EAFF; color: #026EE9; }
     
     /* Responsive Design */
     @media (max-width: 768px) {
@@ -105,6 +105,18 @@
 }
 .attendance-absent{
   border: 1px solid #f1f1f1;
+}
+#attendanceChart {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+
+hr {
+  margin-top: 5px;
+  margin-bottom: 20px;
+  border: 0;
+  border-top: 1px solid #ccc;
 }
     .info-box {
         padding: 5px 10px;
@@ -133,98 +145,60 @@
       border: none;
       border-radius: 15px;
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  }
-  .summary-card {
-      color: white;
-      text-align: center;
-      padding: 20px;
-      border-radius: 10px;
-  }
-  .progress-bar {
-      background-color: #28a745;
+      height: auto;
   }
 
-  .summary-card {
-      width: 100%;
-      height: 160px;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      align-items: center;
-      border-radius: 20px; /* Added border-radius */
-      padding-bottom: 10px; /* Reduced padding */
-      color: white;
-      font-weight: bold;
-      position: relative;
-      overflow: hidden;
-  }
-  
-  
-  
-  .summary-card .top-section {
-      position: absolute;
-      top: 0;
-      width: 100%;
-      height: 40%;
-      border-top-left-radius: 15px;
-      border-top-right-radius: 15px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 18px;
-      font-weight: bold;
-      color: black;
-  }
-  
-  .summary-card p {
-      margin-bottom: 5px; /* Adjusted margin to prevent overlap */
-      font-size: 14px; /* Slightly reduced font size if needed */
-  }
-  /* Colors for each card */
-  .bg-attendance {
-      background-color: #4CAF50; /* Green */
-  }
-  .bg-attendance .top-section {
-      background-color: #A8E6A2;
-      height: 50px;
-  }
+  .legend-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    font-size: 14px;
+    gap: 6px; /* Adjust spacing between legend items */
 
-  .bg-late {
-      background-color: #FF9800; /* Orange */
-      
-  }
-  .bg-late .top-section {
-      background-color: #F5D0A9;
-      height: 80px;
-  }
-
-  .bg-undertime {
-      background-color: #F44336; /* Red */
-  }
-  .bg-undertime .top-section {
-      background-color: #FFCDD2;
-      height: 105px;
-  }
-
-  .bg-absent {
-      background-color: #2196F3; /* Blue */
-  }
-  .bg-absent .top-section {
-      background-color: #BBDEFB;
-      height: 100px;
-  }
-
-  .iconic {
-    background-color: #24AA4E;
-    text-decoration: none;
-    color: #fff;
-    padding: 10px 10px;
-    border-radius: 10px;
-    font-size: 15px; /* Controls button text size */
-    border: none;
+}
+.legend-item {
     display: flex;
     align-items: center;
+    margin: 0 10px;
 }
+.legend-color {
+    width: 10px;
+    height: 8px;
+    border-radius: 3px;
+    margin-right: 6px;
+}
+.legend-text {
+    flex: 1;
+    color: #999;
+    font-weight: 500;
+    font-size: 10px;
+    margin-right: 5px;
+}
+.legend-value {
+    font-weight: 500;
+    font-size: 10px;
+    color: #333;
+}
+
+.btn-sm {
+  font-size: 14px;
+  padding: 6px 12px;
+  border-radius: 8px;
+}
+
+.btn-light {
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  box-shadow: none;
+}
+
+.d-flex.align-items-center.gap-1 span {
+  font-weight: 500;
+  color: #6c757d;
+}
+
+  
 </style>
 </head>
 
@@ -365,7 +339,7 @@
       <!-- End Dashboard Nav -->
 
       <li class="nav-item">
-        <a class="nav-link" href="attendance.html">
+        <a class="nav-link collapsed" href="attendance.html">
           <i class="bi bi-calendar-week"></i>
           <span>Attendance</span>
         </a>
@@ -373,7 +347,7 @@
       <!-- End Attendance Page Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="lecturers.html">
+        <a class="nav-link " href="lecturers.html">
           <i class="bi bi-mortarboard-fill"></i>
           <span>Lecturers</span>
         </a>
@@ -407,13 +381,10 @@
     
         <div class="profile-card">
             <div class="d-flex justify-content-between align-items-center mb-3">
-                <h5 class="mb-0">Student Details</h5>
+                <h5 class="mb-0">Lecturer Details</h5>
                 <div class="d-flex align-items-center">
-                    <select class="form-select form-select-sm me-2" style="width: auto;">
-                        <option>Monthly</option>
-                        <option>Weekly</option>
-                    </select>
-                    <button class="btn btn-success btn-sm iconic">  Download Info <i class="fa fa-arrow-right ms-1"></i></button>
+                
+                    <button class="btn btn-success btn-sm iconic">  Assign course <i class="fa fa-arrow-right ms-1"></i></button>
                 </div>
             </div>
     
@@ -451,35 +422,35 @@
                     <div class="attendance-card attendance-total">
                         <i class="fas fa-user-check"></i>
                         <div>
-                            <h6 class="mb-0">12 Days</h6>
+                            <h6 class="mb-0">18 Days</h6>
                             <small>Total Attendance</small>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="attendance-card attendance-late">
-                        <i class="bi bi-clock-history"></i>
+                        <i class="fas fa-user-check"></i>
                         <div>
-                            <h6 class="mb-0">7 Days</h6>
+                            <h6 class="mb-0">20 Days</h6>
                             <small>Late Attendance</small>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="attendance-card attendance-undertime">
-                        <i class="fas fa-clock"></i>
+                        <i class="fas fa-user-check"></i>
                         <div>
-                            <h6 class="mb-0">1 Day</h6>
-                            <small >Undertime Attend...</small>
+                            <h6 class="mb-0">4 Courses</h6>
+                            <small >Courses assigned</small>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="attendance-card attendance-absent">
-                        <i class="fas fa-user-times"></i>
+                        <i class="fas fa-user-check"></i>
                         <div>
-                            <h6 class="mb-0">2 Days</h6>
-                            <small>Total Absent</small>
+                            <h6 class="mb-0">88%</h6>
+                            <small>average attendance</small>
                         </div>
                     </div>
                 </div>
@@ -487,126 +458,65 @@
         </div>
     </div>
 
+    <!-- graph -->
+
     <div class="container mt-4">
-      <div class="row">
-          <div class="col-md-6">
-              <div class="card p-3 d-flex flex-row justify-content-between align-items-center">
-                  <div>
-                      <h5 class="fw-bold">Class Days</h5>
-                      <p class="text-muted">Class Days Monthly</p>
-                  </div>
-                  <h2 class="fw-bold">23 Days</h2>
-              </div>
-              
-              <div class="card p-3 mt-3">
-                  <div class="d-flex justify-content-between align-items-center">
-                      <div>
-                          <h5>Attendance Rate</h5>
-                      </div>
-                      <h2 class="fw-bold">52%</h2>
-                  </div>
-                  <div class="d-flex justify-content-end">
-                      <button class="btn btn-light btn-sm shadow-sm text-secondary" style="background-color: #f5f5f5; border: none;">
-                          📅 Jan 2025 • Aug 2025
+        <div class="row">
+            <!-- Attendance Trend Overtime -->
+            <div class="col-md-7 d-flex">
+              <div class="card p-3 w-100 h-100">
+                  <div class="d-flex justify-content-between align-items-center mb-2">
+                      <h6 class="mb-0">Attendance Trend Overtime</h6>
+                      <button class="btn btn-light btn-sm d-flex align-items-center gap-1 px-2 py-1 border">
+                          <i class="bi bi-calendar"></i>
+                          <span>Jan 2025 - May 2025</span>
                       </button>
                   </div>
-                  <p class="text-muted">Percentage</p>
-                  
-                  <canvas id="attendanceChart"></canvas>
-              </div>
-              
-              
-          </div>
-          <div class="col-md-6">
-             
-              <div class="card p-3">
-                  <div class="d-flex justify-content-between">
-                      <h5 class="fw-bold" style="font-size: 14px;">Summary - Ezekiel Olayiwola</h5>
-                      <p class="text-muted" style="font-size: 14px;">Class Days Monthly</p>
-                  </div>
-                  <div class="row g-3">
-                      <div class="col-3">
-                          <div class="summary-card bg-attendance">
-                              <div class="top-section">12</div>
-                              <i class="fas fa-user icon"></i>
-                              <p>Attendance</p>
-                          </div>
-                      </div>
-                      <div class="col-3">
-                          <div class="summary-card bg-late">
-                              <div class="top-section">7</div>
-                              <i class="fas fa-user icon"></i>
-                              <p>Late</p>
-                          </div>
-                      </div>
-                      <div class="col-3">
-                          <div class="summary-card bg-undertime">
-                              <div class="top-section">1</div>
-                              <i class="fas fa-user icon"></i>
-                              <p>Undertime</p>
-                          </div>
-                      </div>
-                      <div class="col-3">
-                          <div class="summary-card bg-absent">
-                              <div class="top-section">2</div>
-                              <i class="fas fa-user icon"></i>
-                              <p>Absent</p>
-                          </div>
-                      </div>
+                  <hr>
+                  <div class="chart-container" style="width: 100%; height: 350px;">
+                      <canvas id="attendanceChart"></canvas>
                   </div>
               </div>
-              
-              <div class="card p-3 mt-3">
-                  <table class="table align-middle">
-                      <thead class="table-light">
-                          <tr>
-                              <th>SN</th>
-                              <th>Names</th>
-                              <th>ID</th>
-                              <th>Progress</th>
-                          </tr>
-                      </thead>
-                      <tbody>
-                          <tr class="mb-3">
-                              <td><strong>01</strong></td>
-                              <td class="py-3">Ezekiel Olayiwola</td>
-                              <td class="py-3">2020/SC/162234</td>
-                              <td class="py-3 d-flex align-items-center">
-                                  <div class="progress flex-grow-1" style="height: 8px; width: 100px; background-color: #E2E8F0;">
-                                      <div class="progress-bar" style="width: 90%; background-color: #1CAF5E; border-radius: 10px;"></div>
-                                  </div>
-                                  <span class="ms-2">90%</span>
-                              </td>
-                          </tr>
-                          <tr class="mb-3">
-                              <td><strong>02</strong></td>
-                              <td class="py-3">Malcolm Johnson</td>
-                              <td class="py-3">2020/SC/162234</td>
-                              <td class="py-3 d-flex align-items-center">
-                                  <div class="progress flex-grow-1" style="height: 8px; width: 100px; background-color: #E2E8F0;">
-                                      <div class="progress-bar" style="width: 88%; background-color: #1CAF5E; border-radius: 10px;"></div>
-                                  </div>
-                                  <span class="ms-2">88%</span>
-                              </td>
-                          </tr>
-                          <tr class="mb-3">
-                              <td><strong>03</strong></td>
-                              <td class="py-3">David Thompson</td>
-                              <td class="py-3">2020/SC/162234</td>
-                              <td class="py-3 d-flex align-items-center">
-                                  <div class="progress flex-grow-1" style="height: 8px; width: 100px; background-color: #E2E8F0;">
-                                      <div class="progress-bar" style="width: 85%; background-color: #1CAF5E; border-radius: 10px;"></div>
-                                  </div>
-                                  <span class="ms-2">85%</span>
-                              </td>
-                          </tr>
-                      </tbody>
-                  </table>
-              </div>
-              
           </div>
-      </div>
-  </div>
+          
+    
+            <!-- Faculty Attendance -->
+            <div class="col-md-5 d-flex">
+                <div class="card p-3 w-100 h-100">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h6>Top 5 Faculty Attendance</h6>
+                        <button class="btn btn-light btn-sm">
+                          <i class="fas fa-filter rank" style="color: #8B8C8C;"></i>
+                        </button>
+                    </div>
+              <hr>
+                    <div class="chart-container">
+                        <canvas id="facultyChart"></canvas>
+                    </div>
+    
+                    <div class="legend-container">
+                        <div class="legend-item">
+                            <span class="legend-color" style="background-color: #116530;"></span>
+                            <span class="legend-text">CSC 401</span>
+                            <span class="legend-value">100 students</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-color" style="background-color: #3DA35D;"></span>
+                            <span class="legend-text">CSC 301</span>
+                            <span class="legend-value">200 students</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-color" style="background-color: #7ED957;"></span>
+                            <span class="legend-text">CSC 333</span>
+                            <span class="legend-value">200 students</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
  </main>
 
   <!-- ======= Footer ======= -->
@@ -616,21 +526,70 @@
 <!-- calendar -->
   <!-- Vendor JS Files -->
 
-  
   <script>
-    var ctx = document.getElementById('attendanceChart').getContext('2d');
-    new Chart(ctx, {
-        type: 'bar',
+    // Attendance Chart
+    const ctx1 = document.getElementById('attendanceChart').getContext('2d');
+    new Chart(ctx1, {
+        type: 'line',
         data: {
-            labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug'],
+            labels: ['CSC 301', 'CSC 401', 'CSC 333'],
             datasets: [{
-                label: 'Attendance Percentage',
-                data: [40, 60, 80, 50, 65, 50, 50, 70],
-                backgroundColor: '#24AA4E'
+                label: 'Attendance Percentage (%)',
+                data: [80, 65, 86], // Adjusted percentages from the image
+                backgroundColor: 'rgba(72, 192, 180, 0.2)',
+                borderColor: '#24AA4E',
+                borderWidth: 2,
+                fill: true,
+                tension: 0.4
             }]
         },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false, // Keep aspect ratio to prevent stretching
+            aspectRatio: 2, // Adjust this value as needed (try 2, 2.5, or 3)
+            plugins: {
+                legend: { display: false }
+            },
+            scales: {
+                y: {
+                    beginAtZero: false,
+                    min: 20,  // Setting min to show "Below 20%"
+                    max: 100,
+                    ticks: {
+                        stepSize: 20,
+                        callback: function(value) {
+                            if (value === 20) return "Below 20%";
+                            return value + "%";
+                        }
+                    }
+                }
+            }
+        }
+    });
+
+    const ctx = document.getElementById('facultyChart').getContext('2d');
+    new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+            labels: ['CSC 401', 'CSC 301', 'CSC 333'],
+            datasets: [{
+                data: [100, 200, 200],
+                backgroundColor: ['#7CCC95', '#50BB71', '#24AA4E'],
+                borderWidth: 0
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            cutout: '70%',
+            plugins: {
+                legend: { display: false }
+            }
+        }
     });
 </script>
+  
+
 
   <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
